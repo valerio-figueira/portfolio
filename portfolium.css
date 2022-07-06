@@ -1,0 +1,228 @@
+@charset "UTF-8";
+
+
+
+
+*{
+    box-sizing: border-box;
+}
+
+
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: justify;
+    margin: 0 auto;
+
+    background-color: #eff2f7;
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-areas:
+    "picture header"
+    "picture main"
+    "picture footer";
+    position: relative;
+}
+
+header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+footer{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    grid-area: footer;
+    font-weight: bolder;
+    font-style: italic;
+}
+
+header, main, footer{
+    padding: 2rem;
+    margin: 0;
+}
+header img{
+    display: none;
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+    width: 10rem;
+}
+header h1, header h2{
+    padding: 0 1rem 0;
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+body main .background p, .background h2{
+    background-color: #000000a7;
+    color: white;
+    border-bottom: none;
+}
+
+
+
+picture{
+    grid-area: picture;
+    height: 100%;
+    width: 380px;
+
+    background-image: url(/imgs/background-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.about{
+    padding-bottom: 5rem;
+    padding: 0 1rem 1rem;
+}
+.about h2{
+    padding: 2rem 0;
+    border-bottom: 1px solid #a7a7a7;
+}
+
+
+
+
+.portfolium-grid{
+    display: grid;
+    grid-template-areas: "portfolium-title portfolium-title";
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #a7a7a7;
+    border-bottom: 1px solid #a7a7a7;
+}
+
+.portfolium-title{
+    grid-area: portfolium-title;
+    padding: 3rem 1rem 0;
+}
+.project{
+    padding: 0.5em 1rem;
+    margin: 1rem 0;
+}
+.project img{
+    width: 100%;
+}
+
+
+picture{
+    box-shadow: 0px 0px 7px 1px #00000048;
+}
+.perfil{
+    position: fixed;
+    left: 30px;
+    margin: 10px;
+
+
+    color: white;
+    background-color: #0000007c;
+    border-radius: 8px;
+    padding: 15px 20px;
+}
+.perfil .avatar{
+    display: block;
+    width: 150px;
+    border-radius: 6px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 5px 2px #000000c4;
+}
+.perfil h2{
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 1700px) {
+    picture{
+        width: 500px;
+    }
+    .perfil{
+        left: 80px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    picture{
+        width: 400px;
+        transition: 0.5s;
+    }
+    .perfil{
+        left: 40px;
+        transition: 0.5s;
+    }
+}
+@media screen and (max-width: 1000px) {
+    picture{
+        width: 300px;
+        transition: 0.5s;
+    }
+    .perfil{
+        font-size: 13px;
+        left: 8px;
+        padding: 25px;
+        transition: 0.5s;
+    }
+}
+@media screen and (max-width: 800px) {
+    picture{
+        height: 400px;
+        width: 100vw;
+        transition: 0.5s;
+    }
+    .perfil{
+        display: none;
+        font-size: 13px;
+        left: 8px;
+        padding: 25px;
+        transition: 0.5s;
+    }
+
+
+    header{
+        position: absolute;
+        top: 50px;
+        left: 200px;
+
+        background-color: #0000008a;
+        border-radius: 8px;
+        color: white;
+        padding: 0;
+    }
+    header h1, header h2{
+        
+        padding: 15px;
+        
+    
+    }
+
+
+    .container{
+        display: grid;
+        grid-template-areas:
+        "header header"
+        "picture picture"
+        "main main"
+        "footer footer";
+        position: relative;
+    }
+    
+    
+    .parallax{
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}

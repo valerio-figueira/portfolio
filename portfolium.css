@@ -81,7 +81,7 @@ picture{
     height: 100%;
     width: 380px;
 
-    background-image: url(/imgs/background-img.jpg);
+    background-image: url(./imgs/background-img.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

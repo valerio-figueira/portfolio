@@ -14,10 +14,13 @@ body{
     text-align: justify;
     margin: 0 auto;
 
-    background-color: #eff2f7;
+    background-color: light;
 }
 
-
+header, main, footer{
+    padding: 2rem;
+    margin: 0;
+}
 
 .container{
     display: grid;
@@ -39,12 +42,10 @@ footer{
     grid-area: footer;
     font-weight: bolder;
     font-style: italic;
+    padding: 1rem 2.5rem 3rem;
 }
 
-header, main, footer{
-    padding: 2rem;
-    margin: 0;
-}
+
 header img{
     display: none;
     position: absolute;
@@ -53,7 +54,10 @@ header img{
     width: 10rem;
 }
 header h1, header h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bolder;
     padding: 0 1rem 0;
+    line-height: 4rem;
 }
 
 .flex{
@@ -84,6 +88,13 @@ picture{
     background-attachment: fixed;
 }
 
+picture .mobile{
+    display: none;
+}
+.perfil .close-bar{
+    display: none;
+}
+
 .about{
     padding-bottom: 5rem;
     padding: 0 1rem 1rem;
@@ -103,6 +114,7 @@ picture{
 
     border-top: 1px solid #a7a7a7;
     border-bottom: 1px solid #a7a7a7;
+    margin: 0 1rem;    
 }
 
 .portfolium-title{
@@ -127,7 +139,7 @@ picture{
     margin: 10px;
 
 
-    color: white;
+    
     background-color: #0000007c;
     border-radius: 8px;
     padding: 15px 20px;
@@ -140,17 +152,45 @@ picture{
     box-shadow: 0px 0px 5px 2px #000000c4;
 }
 .perfil h2{
+    color: white;
     text-align: center;
 }
+.contact a, .contact span{
+    display: block;
+    text-decoration: none;
+    font-weight: bolder;
+    font-size: 14px;
 
+    color: white;
+    padding: 5px;
+    transition: 0.3s;
+}
+.contact span{
+    font-size: 18px;
+    padding: 5px;
+    margin-right: 4px;
+}
+.contact a:hover{
+    color: lightskyblue;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 30px 1fr;
+}
+.grid span{
+    text-align: center;
+}
 
 
 @media screen and (max-width: 1700px) {
     picture{
         width: 500px;
+        transition: 0.5s;
     }
     .perfil{
-        left: 80px;
+        left: 85px;
+        transition: linear 0.5s;
     }
 }
 @media screen and (max-width: 1200px) {
@@ -159,54 +199,98 @@ picture{
         transition: 0.5s;
     }
     .perfil{
-        left: 40px;
-        transition: 0.5s;
+        left: 35px;
+        transition: linear 0.2s;
     }
 }
 @media screen and (max-width: 1000px) {
     picture{
-        width: 300px;
+        width: 330px;
         transition: 0.5s;
     }
     .perfil{
         font-size: 13px;
         left: 8px;
-        padding: 25px;
-        transition: 0.5s;
+        padding: 15px;
+        transition: linear 0.5s;
+    }
+    .portfolium-grid{
+        grid-template-areas: "portfolium-title";
+        grid-template-columns: 1fr;
     }
 }
 @media screen and (max-width: 800px) {
     picture{
         height: 400px;
         width: 100vw;
-        transition: 0.5s;
+        transition: 50ms;
     }
     .perfil{
         display: none;
         font-size: 13px;
-        left: 8px;
-        padding: 25px;
+        height: 100%;
+        padding-top: 4em;
+        margin: 0;
+        left: 0;
+        border-radius: 0;
+        background-color: #3e3e3e;
+        transition: linear 0.5s;
+    }
+    picture .mobile{
+        display: block;
+        position: absolute;
+        color: white;
+        z-index: 1;
+        font-size: 23px;
+        left: 50%;
+        top: 22vh;
+        cursor: pointer;
+    }
+    .perfil .avatar{
+        box-shadow: 0px 0px 5px 2px #00000063;
+    }
+    .perfil .close-bar{
+        font-size: 25px;
+    }
+    .close-bar{
+        position: absolute;
+        top: 6px;
+        right: 6px;
+
+        color: #929292;
+        border-radius: 6px;
+        border: none;
+        padding: 6px;
+        cursor: pointer;
         transition: 0.5s;
     }
+    .close-bar:hover{
+        border-radius: 7px;
+        color: #c66161;
+    }
 
+    .open-perfil, .open-perfil > .close-bar{
+        display: block;
+        transition: linear 0.5s;
+    }
 
     header{
         position: absolute;
-        top: 50px;
-        left: 200px;
 
         background-color: #0000008a;
-        border-radius: 8px;
         color: white;
-        padding: 0;
+        padding: 0 0 30px;
+        width: 100vw;
     }
     header h1, header h2{
-        
-        padding: 15px;
-        
-    
+       padding: 10px;
+       margin: 0;
     }
 
+    .flex{
+        flex-direction: column;
+        align-items: center;;
+    }
 
     .container{
         display: grid;

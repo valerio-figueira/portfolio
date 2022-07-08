@@ -58,6 +58,10 @@ header h1, header h2{
     font-weight: bolder;
     padding: 0 1rem 0;
     line-height: 4rem;
+    transition: 0.4s;
+}
+header h1:hover, header h2:hover{
+    color: dodgerblue;
 }
 
 .flex{
@@ -150,10 +154,19 @@ picture{
     border-radius: 6px;
     margin: 20px auto;
     box-shadow: 0px 0px 5px 2px #000000c4;
+    transition: 0.5s;
+}
+.perfil .avatar:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 2px #000000b6;
 }
 .perfil h2{
     color: white;
     text-align: center;
+    transition: 0.4s;
+}
+.perfil h2:hover{
+    color: lightskyblue;
 }
 .contact a, .contact span{
     display: block;
@@ -220,6 +233,9 @@ picture{
     }
 }
 @media screen and (max-width: 800px) {
+    header h1:hover, header h2:hover{
+        color: inherit;
+    }
     picture{
         height: 400px;
         width: 100vw;
@@ -240,11 +256,15 @@ picture{
         display: block;
         position: absolute;
         color: white;
-        z-index: 1;
+        z-index: 0;
         font-size: 23px;
         left: 50%;
-        top: 22vh;
+        top: 10rem;
         cursor: pointer;
+        transition: 0.4s;
+    }
+    picture .mobile:hover{
+        color: #84c1ff;
     }
     .perfil .avatar{
         box-shadow: 0px 0px 5px 2px #00000063;

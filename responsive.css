@@ -2,13 +2,13 @@
 
 
 :root{
-    --color1: #191970;
-    --color2: #0c1d49;
-    --color3: #2c359a;
     --prime-color: #0f225e;
-    --second-color: #ffbb00;
-    --third-color: #1da46e;
-    --fourth-color: #00ff7b;
+    --dark-green: #15ca67;
+    --light-green: #00ff7b;
+    --light-green2: #65eba6;
+    --dark-gray: #363636;
+    --blue-color: #155d78;
+    --white: #ffffff;
     --background-color: #ececec;
     --max-width: 900px;
     --min-width: 360px;
@@ -35,7 +35,7 @@
     SIDE COLUMN
     */
     .box h2{
-        margin: 15px 20px;
+        margin: 15px 0px;
         transition: 0.5s;
     }
     .box p{
@@ -52,7 +52,7 @@
     }
 
     .grid-layout{
-        grid-template-columns: 210px 1fr;        
+        grid-template-columns: 220px 1fr;        
     }
     
 
@@ -60,12 +60,13 @@
     SIDE COLUMN
     */
     .box h2{
-        margin: 15px 7px;
         transition: 0.5s;
     }
     .box p{
         font-size: 12px;
-        margin: 10px 7px;
+    }
+    .box{
+        padding: 0px 10px;
     }
 }
 
@@ -96,7 +97,7 @@
         transition: 0.5s;
     }
     .mobile a:hover{
-        color: var(--third-color);
+        color: var(--dark-green);
     }
 
     .perfil.open{
@@ -107,6 +108,11 @@
     }
     .perfil.open *{
         opacity: 1;
+    }
+
+    
+    .box{
+        padding: 0 15px;
     }
 
 
@@ -124,6 +130,6 @@
         border: none;
     }
     .close-icon:hover{
-        color: var(--third-color);
+        color: var(--dark-green);
     }
 }

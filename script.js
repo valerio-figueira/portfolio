@@ -1,3 +1,4 @@
+/*Mobile button to open vertical bar*/
 const mobile = document.querySelector(".mobile");
 const perfil = document.querySelector(".perfil");
 const icon = document.querySelector(".close-icon");
@@ -45,7 +46,7 @@ for(let anchor of anchors){
     }
 }
 
-
+/*Insert new article with contents in sidebar*/
 const box = document.querySelector(".box");
 const article = document.createElement("article");
 box.appendChild(article);
@@ -78,3 +79,4 @@ li[9].innerText = "Rede de Computadores";
 
 /*
 p.innerText = "HTML5, CSS3, Javascript, Java, Redes LAN-WAN, Hardware, CSS Flexbox, CSS Grid Layout, Linux, Rede de Computadores";*/
+

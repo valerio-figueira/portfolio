@@ -1,0 +1,224 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Prompt:wght@900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Prompt:wght@900&display=swap');
+
+:root{
+    --prime-color: #0f225e;
+    --second-color: #ffbb00;
+    --third-color: #1da46e;
+    --fourth-color: #00ff7b;
+    --fifth-color: #363636;
+    --blue-color: #155d78;
+    --white: #ffffff;
+    --background-color: #ececec;
+    --max-width: 900px;
+    --min-width: 360px;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*
+HEADERS Font
+*/
+h1, h2{
+    font-family: 'Prompt', sans-serif;
+    transition: 0.5s;
+}
+h1:hover, h2:hover{
+    color: var(--third-color);
+}
+h2{
+    font-size: 27px;
+}
+p{
+    color: #363636;
+    font-size: 14px;
+    font-family: monospace;
+}
+
+
+/*
+LINKS
+*/
+.icon{
+    font-size: 18px;
+}
+.about a{
+    font-weight: bolder;
+    color: var(--blue-color);
+    transition: 0.5s;
+}
+.about a:hover{
+    color: var(--third-color);
+}
+
+
+/*
+GRID-LAYOUT
+*/
+.grid-layout{
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas: 
+    "perfil header"
+    "perfil main"
+    "perfil footer";
+
+    max-width: var(--max-width);
+    min-width: var(--min-width);
+    margin: auto;    
+
+    background-color: #ececec;
+    color: var(--prime-color);
+    box-shadow: 0px 0px 10px 2px #0000007b;
+    transition: 0.5s;
+}
+header{
+    grid-area: header;
+}
+.perfil{
+    grid-area: perfil;
+
+    background-color: var(--prime-color);
+    color: white;
+    margin: 0;
+}
+.perfil a{
+    color: var(--white);
+    text-decoration: none;
+}
+.perfil p{    
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: var(--white);
+}
+
+
+main{
+    grid-area: main;
+}
+footer{
+    grid-area: footer;
+    font-style: italic;   
+    padding: 50px 20px 30px; 
+}
+
+
+
+
+
+/*SPACE BETWEEN THE TWO MAIN COLUMNS*/
+header, main > article, main .portfolium-title{
+    padding: 0 20px;
+}
+
+.mobile{
+    display: none;
+}
+
+.main-title{
+    font-size: 42px;
+    transition: 0.5s;
+}
+.subtitle{    
+    font-family: monospace;
+    font-size: 22px;
+    padding: 0 10px;  
+    transition: 0.5s;  
+}
+
+/*
+font-family: 'Secular One', sans-serif; 
+*/
+
+
+/*
+MY PORTFOLIUM, CREATED WITH GRID
+*/
+.portfolium{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.portfolium .portfolium-title{
+    grid-column: 1/3;
+}
+
+
+.portfolium img{
+    width: 100%;
+    box-shadow: 0px 0px 5px 2px #00000052;
+    transition: 0.5s;
+}
+.portfolium img:hover{
+    box-shadow: 0px 0px 10px 3px #0e83baac;
+}
+.portfolium h2{
+    margin: 10px 0;
+}
+.portfolium a{
+    color: var(--prime-color);
+    text-decoration: none;
+}
+.portfolium p{
+    text-align: justify;
+}
+
+/*
+LINKS DENTRO DO ARTICLE
+*/
+.portfolium article p a{
+    font-weight: bold;
+    color: var(--blue-color);
+    transition: 0.5s;
+}
+.portfolium article p a:hover{
+    color: var(--third-color);
+}
+
+
+
+/*SIDE-COLUMN*/
+.about{
+    margin: 5rem 0 2rem;
+    border-bottom: 5px solid var(--prime-color);
+}
+.avatar{
+    width: 100%;
+}
+
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box h2{
+    margin: 15px 20px;
+    transition: 0.5s;
+}
+.box h2:hover{
+    color: var(--fourth-color);
+}
+.box p{
+    font-size: 16px;
+    margin: 10px 20px;
+    transition: 0.5s;
+}
+.box p:hover{
+    color: var(--fourth-color);
+}
+
+
+
+

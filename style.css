@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@800&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Prompt:wght@900&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Prompt:wght@900&display=swap');
-
 :root{
     --prime-color: #042940;
     --dark-green: #15ca67;
@@ -21,6 +9,7 @@
     --blue-color: #155d78;
     --white: #ffffff;
     --background-color: #ececec;
+    --text-shadow: 2px 2px 1px #042940;
     --max-width: 900px;
     --min-width: 360px;
 }
@@ -35,41 +24,6 @@ html{
 
 *{
     box-sizing: border-box;
-}
-
-/*
-HEADERS Font
-*/
-h1, h2{
-    font-family: 'Prompt', sans-serif;
-    transition: 0.5s;
-}
-h1:hover, h2:hover{
-    color: var(--dark-green);
-}
-h2{
-    font-size: 27px;
-}
-p{
-    color: var(--dark-gray);
-    font-size: 14px;
-    font-family: monospace;
-}
-
-
-/*
-LINKS
-*/
-.icon{
-    font-size: 18px;
-}
-.about a{
-    font-weight: bolder;
-    color: var(--blue-color);
-    transition: 0.5s;
-}
-.about a:hover{
-    color: var(--dark-green);
 }
 
 
@@ -88,8 +42,7 @@ GRID-LAYOUT
     min-width: var(--min-width);
     margin: auto;    
 
-    background-color: #ececec;
-    color: var(--prime-color);
+    background-color: #ececec;    
     box-shadow: 0px 0px 10px 2px #0000007b;
     transition: 0.5s;
 }
@@ -99,20 +52,9 @@ header{
 .perfil{
     grid-area: perfil;
 
-    background-color: var(--prime-color);
-    color: white;
+    background-color: var(--prime-color);    
     margin: 0;
 }
-.perfil a{
-    color: var(--white);
-    text-decoration: none;
-}
-.perfil p{    
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: var(--white);
-}
-
-
 main{
     grid-area: main;
 }
@@ -135,20 +77,7 @@ header, main > article, main .portfolium-title{
     display: none;
 }
 
-.main-title{
-    font-size: 42px;
-    transition: 0.5s;
-}
-.subtitle{    
-    font-family: monospace;
-    font-size: 22px;
-    padding: 0 10px;  
-    transition: 0.5s;  
-}
 
-/*
-font-family: 'Secular One', sans-serif; 
-*/
 
 
 /*
@@ -171,28 +100,9 @@ MY PORTFOLIUM, CREATED WITH GRID
 .portfolium img:hover{
     box-shadow: 0px 0px 10px 3px #0e83baac;
 }
-.portfolium h2{
-    margin: 10px 0;
-}
-.portfolium a{
-    color: var(--prime-color);
-    text-decoration: none;
-}
-.portfolium p{
-    text-align: justify;
-}
 
-/*
-LINKS DENTRO DO ARTICLE
-*/
-.portfolium article p a{
-    font-weight: bold;
-    color: var(--blue-color);
-    transition: 0.5s;
-}
-.portfolium article p a:hover{
-    color: var(--dark-green);
-}
+
+
 
 
 
@@ -206,11 +116,15 @@ LINKS DENTRO DO ARTICLE
 }
 
 
+
 .flex{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+/*
+FONTs INSIDE THE BOX
+*/
 .box h2{
     margin: 15px 0px;
     transition: 0.5s;
@@ -228,16 +142,12 @@ LINKS DENTRO DO ARTICLE
 }
 
 
-.copyright{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 17px;
-    color: var(--prime-color);
-}
+
 .flex-row{
     display: flex;
     justify-content: space-between;
 }
-.scrolltop{
+.container .scrolltop{
     font-size: 22px;
     text-decoration: none;
 
@@ -249,7 +159,7 @@ LINKS DENTRO DO ARTICLE
     box-shadow: 0px 0px 8px 1px #0000007d;
     transition: 0.5s;
 }
-.scrolltop:hover{
+.container .scrolltop:hover{
     color: #00ff62;
     box-shadow: 0px 0px 10px 1px #00b3ffd6;
 }

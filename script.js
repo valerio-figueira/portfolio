@@ -93,7 +93,7 @@ description[2].textContent = "Meu primeiro site feito com efeito parallax. É um
 
 description[3].textContent = "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.";
 
-description[5].textContent = "Meu primeiro \"projetinho\", o qual tentei fazer com o maior carinho, apesar de ser apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.";
+description[5].textContent = "Meu primeiro \"projetinho\", o qual tentei fazer com o maior carinho, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.";
 
 /*Turmalina*/
 const link = document.createElement("a");

@@ -95,13 +95,22 @@ MY PORTFOLIUM, CREATED WITH GRID
 .portfolium img{
     width: 100%;
     box-shadow: 0px 0px 5px 2px #00000052;
+    opacity: 1;
     transition: 0.5s;
+
+    margin: 0 0 -4px;
 }
 .portfolium img:hover{
-    box-shadow: 0px 0px 10px 3px #0e83baac;
+    box-shadow: none;
+    opacity: 0.8;
 }
-
-
+.img-effect{
+    display: block;
+    transition: 0.7s;
+}
+.img-effect:hover{
+    box-shadow: 0px 0px 10px 3px #0e83baac, inset 0px 0px 70px 40px #000;
+}
 
 
 
@@ -111,7 +120,7 @@ MY PORTFOLIUM, CREATED WITH GRID
     margin: 5rem 0 2rem;
     border-bottom: 5px solid var(--prime-color);
 }
-.avatar{
+.avatar{    
     width: 100%;
 }
 

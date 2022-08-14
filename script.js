@@ -138,3 +138,28 @@ function createAnchor(post, url){
     post.appendChild(link);
     return post;
 }
+
+
+
+/*ADD EFFECT CLASS IN IMGs*/
+
+for(let item of post){
+    item.previousElementSibling.className = "img-effect";    
+}
+/*
+let imgs = document.querySelectorAll(".img-effect");
+for(let img of imgs){
+    createParagraphs(img);
+    img.style.position = "relative";
+    img.lastChild.className = "center-text";
+}
+
+function createParagraphs(img){
+    let p = document.createElement("p");
+    p.innerText = "Preview";
+    p.style.textAlign = "center";
+    p.style.verticalAlign = "middle";
+    img.appendChild(p);
+    return img;
+}
+*/

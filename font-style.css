@@ -37,7 +37,7 @@ h1, h2{
     transition: 0.5s;
 }
 h1:hover, h2:hover{
-    color: var(--dark-green);
+    color: var(--light-green);
     text-shadow: var(--text-shadow);
 }
 h2{
@@ -60,6 +60,9 @@ p{
     font-size: 22px;
     padding: 0 10px;  
     transition: 0.5s;
+}
+.subtitle:hover{
+    text-shadow: 2px 1px 1px #042940;
 }
 
 /*
@@ -110,11 +113,14 @@ LINKS DENTRO DO ARTICLE
 */
 .portfolium article p a{
     font-weight: bold;
+    font-style: none;
+    text-decoration: none;
     color: var(--blue-color);
-    transition: 0.5s;
+    transition: 0.5s ease;
 }
 .portfolium article p a:hover{
-    color: var(--dark-green);
+    text-shadow: 1px 1px 2px #8dffbd;
+    color: darkcyan;
 }
 
 

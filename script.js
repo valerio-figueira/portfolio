@@ -103,7 +103,7 @@ link.textContent = "rocketseat";
 
 description[4].innerHTML = `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da `;
 description[4].appendChild(link);
-description[4].innerHTML += ` do qual faço parte como estudante de programação.`;
+description[4].innerHTML += `, do qual faço parte como estudante de programação.`;
 
 
 /*
@@ -115,3 +115,26 @@ Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da <a
 /*About myself*/
 const intro = document.querySelector(".paragraph");
 intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScript e outras tecnologias. Além disso, tenho 8 meses de experiência com Java, o qual aprendi resolvendo diversas listas de exercícios para aprimoramento da lógica de programação.";
+
+
+/*
+LINKS INSIDE THE ARTICLE
+*/
+const post = document.querySelectorAll(".description");
+
+post[0] = createAnchor(post[0], "https://www.ipmamonte.mg.gov.br/");
+post[1] = createAnchor(post[1], "https://valerio-figueira.github.io/ruby-project/");
+post[2] = createAnchor(post[2], "https://valerio-figueira.github.io/jasper-project/");
+post[3] = createAnchor(post[3], "https://valerio-figueira.github.io/black-onyx-page/");
+post[4] = createAnchor(post[4], "https://valerio-figueira.github.io/turmalina-page/");
+post[0] = createAnchor(post[5], "https://valerio-figueira.github.io/lapis-lazuli-page/");
+
+function createAnchor(post, url){
+    let link = document.createElement("a");
+    link.setAttribute("href", url);
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "external");
+    link.innerHTML = " Preview";
+    post.appendChild(link);
+    return post;
+}

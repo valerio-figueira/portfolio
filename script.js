@@ -28,57 +28,10 @@ copyright.textContent = `\u00A9 Direitos Autorais - ${year}`;
 /*INSERT URL IN CONTACT H2*/
 const contato = document.querySelector(".box h2");
 contato.style.cursor = "pointer";
-contato.style.padding = "15px 0";
 contato.addEventListener("click", function(){
     window.open("./index.html", "_self");
 })
 
-/*To center icons and links*/
-const anchors = document.querySelectorAll(".box a");
-for(let anchor of anchors){
-    anchor.style.display = "flex";
-    anchor.style.margin = "15px 0";
-    anchor.style.alignItems = "center";
-
-    const paras = document.querySelectorAll(".box p");
-    for(let para of paras){
-        para.style.margin = "0";
-    }
-}
-
-/*Insert new article with contents in sidebar*/
-const box = document.querySelector(".box");
-const article = document.createElement("article");
-box.appendChild(article);
-const competencias = document.createElement("h2");
-competencias.textContent = "Competências";
-article.appendChild(competencias);
-competencias.style.padding = "15px 0";
-
-const ul = document.createElement("ul");
-article.appendChild(ul);
-const li = [];
-for(let i = 0; i < 10; i++){
-    li[i] = document.createElement("li");
-    ul.appendChild(li[i]);
-    li[i].style.padding = "5px 0";
-    li[i].style.fontSize = "15px";
-}
-li[0].innerText = "HTML5";
-li[1].innerText = "CSS3";
-li[2].innerText = "Javascript";
-li[3].innerText = "Java";
-li[4].innerText = "CSS Flexbox";
-li[5].innerText = "CSS Grid Layout";
-li[6].innerText = "Linux";
-li[7].innerText = "Hardware";
-li[8].innerText = "Redes LAN-WAN";
-li[9].innerText = "Rede de Computadores";
-
-
-
-/*
-p.innerText = "HTML5, CSS3, Javascript, Java, Redes LAN-WAN, Hardware, CSS Flexbox, CSS Grid Layout, Linux, Rede de Computadores";*/
 
 /*
 Para treinar um pouco a interface DOM, irei colocar a descrição dos projetos pelo próprio javascript
@@ -180,7 +133,6 @@ setAnchorAtributes(pullAllElements("#black-onyx a"), "https://valerio-figueira.g
 setAnchorAtributes(pullAllElements("#lapis-lazuli a"), "https://valerio-figueira.github.io/lapis-lazuli-page/");
 
 
-
 /*TURMALINA*/
 setAnchorAtributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
 const turmalina = pullElement("#turmalina .description");
@@ -201,8 +153,85 @@ function setAnchorAtributes(elements, url){
     return elements;
 }
 
+
+/*SUBSCRIPTION PAGE - PROJECT (DESCRIPTION OF IT AND LINK)*/
 const subscriptionPage = pullElement("#subscription-page .description");
 subscriptionPage.innerHTML = "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.";
 createAnchorWithAppend(subscriptionPage, "https://valerio-figueira.github.io/singlepage-subscription/", linkText);
 
 
+/*Github LINK*/
+let github = pullElement(".about").lastElementChild;
+github.innerHTML += "Esses e outros projetos podem ser encontrados também em meu repositório remoto ";
+createAnchorWithAppend(github, "https://github.com/valerio-figueira/", "");
+github.firstElementChild.appendChild(document.createElement("span")).className = "fa fa-git-square icon";
+github.firstElementChild.innerHTML += "Github.";
+
+
+/*
+INSERTING TEXT IN HEADERS
+*/
+pullElement(".main-title").innerHTML = "Valerio Figueira";
+pullElement(".subtitle").innerHTML = "Web Developer - Frontend";
+pullElement(".about").firstElementChild.innerHTML = "Sobre";
+
+
+/*
+CREATING CONTACT INFO
+*/
+pullElement(".box").appendChild(createContactInfo(" (34) 99971-3607", "tel:+55(34)99971.3607", "fa fa-phone-square icon"));
+pullElement(".box").appendChild(createContactInfo(" j.valerio.figueira@gmail.com", "mailto:j.valerio.figueira@gmail.com", "fa fa-envelope icon"));
+pullElement(".box").appendChild(createContactInfo(" /valerio-figueira", "https://github.com/valerio-figueira", "fa fa-git-square icon"));
+pullElement(".box").appendChild(createContactInfo(" /valerio-figueira", "https://www.linkedin.com/in/valerio-figueira/", "fa fa-linkedin-square icon"));
+pullElement(".box").appendChild(createContactInfo(" Monte Alegre de Minas - MG", "#location", "fa fa-map-marker icon"));
+
+
+function createContactInfo(description, url, iconName){
+    let anchor = document.createElement("a");
+    let paragraph = document.createElement("p");
+    let icon = document.createElement("span");
+
+    icon.className = iconName;
+    anchor.setAttribute("href", url);
+    anchor.setAttribute("target", "_blank");
+    anchor.setAttribute("rel", "external");  
+    
+    anchor.appendChild(paragraph);
+    paragraph.appendChild(icon);
+    paragraph.innerHTML += description;
+    return anchor;
+}
+
+/*
+CREATING UNORDERED LIST
+*/
+let box = pullAllElements(".box")[1];
+box.appendChild(createHeader("h2", "Competências"));
+
+
+function createHeader(type, text){
+    let h2 = document.createElement(type);
+    h2.innerHTML = text;
+    return h2;
+}
+
+let list = document.createElement("ul");
+box.appendChild(list);
+createList(list, "HTML5");
+createList(list, "CSS3");
+createList(list, "Javascript");
+createList(list, "Java");
+createList(list, "CSS Flexbox");
+createList(list, "CSS Grid Layout");
+createList(list, "Linux");
+createList(list, "Hardware");
+createList(list, "Redes LAN-WAN");
+createList(list, "Hardware");
+createList(list, "Rede de Computadores");
+
+
+function createList(list, description){
+    let li = document.createElement("li")
+    list.appendChild(li);
+    return li.innerHTML = description;
+}

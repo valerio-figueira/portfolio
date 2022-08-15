@@ -52,11 +52,13 @@ p{
 
 /*TITLE AND SUBTITLE OF MY PORTFOLIUM*/
 .main-title{
+    text-align: center;
     font-size: 42px;
     transition: 0.5s;
 }
-.subtitle{    
+.subtitle{
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
     font-size: 22px;
     padding: 0 10px;  
     transition: 0.5s;
@@ -136,10 +138,25 @@ LINKS DENTRO DO ARTICLE
 .perfil a:hover p{
     color: var(--light-green);
 }
+.perfil h2{
+    margin: 40px 0 40px 20px;
+}
 .perfil p{    
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: var(--white);
+    margin: 15px 0 0 20px;
 }
+.perfil ul li{
+    margin: 5px 0 0 20px;
+}
+
+
+
+
+
+
+
+
 
 
 

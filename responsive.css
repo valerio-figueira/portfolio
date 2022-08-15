@@ -18,6 +18,19 @@
     display: none;
 }
 
+/*
+FONTs INSIDE THE BOX
+*/
+.box h2:hover{
+    color: var(--light-green);
+}
+.box p{
+    font-size: 16px;
+    transition: 0.5s;
+}
+
+
+
 @media screen and (max-width: 780px) {
     .portfolium{
         grid-template-columns: 1fr;
@@ -34,13 +47,17 @@
     /*
     SIDE COLUMN
     */
+    .box{
+        padding: 0px 0px 0px 3px;
+    }
     .box h2{
-        margin: 15px 0px;
+        margin: 5px;
         transition: 0.5s;
     }
     .box p{
         font-size: 14px;
-        margin: 10px 20px;
+        margin: 15px 0px 15px 5px;
+        padding: 0;
     }
 }
 @media screen and (max-width: 678px) {
@@ -59,14 +76,26 @@
     /*
     SIDE COLUMN
     */
-    .box h2{
-        transition: 0.5s;
+    .perfil .icon{
+        font-size: 14px;
     }
     .box p{
-        font-size: 12px;
+        font-size: 11px;
+        font-weight: bolder;
     }
-    .box{
-        padding: 0px 10px;
+
+    .perfil .box h2{
+        font-size: 22px;
+        margin: 20px 0 20px 12px;
+    }
+    .perfil .box p{    
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        color: var(--white);
+        margin: 15px 0 0 12px;
+    }
+    .perfil .box ul li{
+        font-size: 12px;
+        margin: 8px 0 0 0;
     }
 }
 
@@ -82,10 +111,12 @@
     .perfil *{
         font-weight: bolder;
         opacity: 0;
+        visibility: hidden;
     }
 
     .mobile{
-        display: block;       
+        display: block;
+        text-align: center;     
         margin: 25px 0 0;
         padding: 0;        
     }
@@ -108,12 +139,17 @@
         box-shadow: 0px 0px 7px 2px #00000086;
     }
     .perfil.open *{
+        visibility: visible;
         opacity: 1;
     }
 
     
-    .box{
-        padding: 0 15px;
+    .perfil .box h2{
+        margin: 20px 0 20px 15px;
+    }
+    .perfil .box p{
+        margin: 15px 0px 15px 15px;
+        font-size: 12px;
     }
 
 
@@ -132,5 +168,13 @@
     }
     .close-icon:hover{
         color: var(--dark-green);
+    }
+}
+@media screen and (max-width: 380px) {
+    header .main-title{
+        font-size: 40px;
+    }
+    header .subtitle{
+        font-size: 20px;
     }
 }

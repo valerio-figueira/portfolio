@@ -129,26 +129,9 @@ MY PORTFOLIUM, CREATED WITH GRID
 .flex{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: left;
 }
-/*
-FONTs INSIDE THE BOX
-*/
-.box h2{
-    margin: 15px 0px;
-    transition: 0.5s;
-}
-.box h2:hover{
-    color: var(--light-green);
-}
-.box p{
-    font-size: 16px;
-    margin: 10px 20px;
-    transition: 0.5s;
-}
-.box p:hover{
-    color: var(--light-green);
-}
+
 
 
 

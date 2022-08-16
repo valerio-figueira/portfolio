@@ -15,7 +15,7 @@
 :root{
     --prime-color: #042940;
     --dark-green: #15ca67;
-    --light-green: #00ff7b;
+    --light-green: #51ed9c;
     --light-green2: #65eba6;
     --dark-gray: #363636;
     --blue-color: #155d78;
@@ -23,7 +23,9 @@
     --background-color: #ececec;
     --text-shadow: 2px 2px 1px #042940;
 }
-
+/*
+--light-green: #00ff7b;
+*/
 .container a{
     color: var(--prime-color);
 }

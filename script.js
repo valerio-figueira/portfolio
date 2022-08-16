@@ -98,7 +98,9 @@ function pullElement(id){
 function pullAllElements(id){
     return document.querySelectorAll(`${id}`);
 }
-
+let pullElements = (id) => {
+    document.querySelectorAll(id);
+}
 
 
 const linkText = " Preview";

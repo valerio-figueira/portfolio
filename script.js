@@ -109,7 +109,7 @@ ipma.innerHTML = "Meu primeiro projeto real, feito para o Instituto de Previdên
 createAnchorWithAppend(ipma, "https://www.ipmamonte.mg.gov.br/", linkText);
 
 const ruby = pullElement("#ruby .description");
-ruby.innerHTML = "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização, e.g., absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc."
+ruby.innerHTML = "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc."
 createAnchorWithAppend(ruby, "https://valerio-figueira.github.io/ruby-project/", linkText);
 
 const jasper = pullElement("#jasper .description");
@@ -121,7 +121,7 @@ blackOnyx.innerHTML = "Este modelo de site, com a propriedade grid, contém trê
 createAnchorWithAppend(blackOnyx, "https://valerio-figueira.github.io/black-onyx-page/", linkText);
 
 const lapisLazuli = pullElement("#lapis-lazuli .description");
-lapisLazuli.innerHTML = "Meu primeiro \"projetinho\", o qual tentei fazer com o maior carinho, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.";
+lapisLazuli.innerHTML = "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.";
 createAnchorWithAppend(lapisLazuli, "https://valerio-figueira.github.io/lapis-lazuli-page/", linkText);
 
 

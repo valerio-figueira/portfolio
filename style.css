@@ -36,6 +36,7 @@ GRID-LAYOUT
     grid-template-areas: 
     "perfil header"
     "perfil main"
+    "perfil pages"
     "perfil footer";
 
     max-width: var(--max-width);
@@ -57,6 +58,30 @@ header{
 }
 main{
     grid-area: main;
+}
+.pages_controller{
+    grid-area: pages;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+body .pages_controller a{
+    font-size: 25px;
+    font-weight: bolder;
+    background-color: var(--prime-color);
+    color: var(--light-green);
+
+    margin: 20px 0;
+    padding: 5px 15px;
+
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: 0.5s;
+}
+body .pages_controller a:hover{
+    color: #00ff62;
+    box-shadow: 0px 0px 10px 3px #0e83baac;
 }
 footer{
     grid-area: footer;

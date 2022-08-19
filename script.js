@@ -102,6 +102,11 @@ function pullAllElements(id){
 
 
 const linkText = " Preview";
+
+const huddle = pullElement("#huddle .description");
+huddle.innerHTML = "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.";
+createAnchorWithAppend(huddle, "https://valerio-figueira.github.io/huddle-landing-page/", linkText);
+
 const ipma = pullElement("#ipma .description");
 ipma.innerHTML = "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.";
 createAnchorWithAppend(ipma, "https://www.ipmamonte.mg.gov.br/", linkText);
@@ -124,7 +129,7 @@ createAnchorWithAppend(lapisLazuli, "https://valerio-figueira.github.io/lapis-la
 
 
 
-
+setAnchorAtributes(pullAllElements("#huddle a"), "https://valerio-figueira.github.io/huddle-landing-page/");
 setAnchorAtributes(pullAllElements("#ipma a"), "https://www.ipmamonte.mg.gov.br/");
 setAnchorAtributes(pullAllElements("#subscription-page a"), "https://valerio-figueira.github.io/singlepage-subscription/");
 setAnchorAtributes(pullAllElements("#ruby a"), "https://valerio-figueira.github.io/ruby-project/");

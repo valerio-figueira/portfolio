@@ -9,21 +9,21 @@ const pages = [
     {page: Page03},
 ];
 
-let currentPage = pages.length - 1;
+let currentIndex = pages.length - 1;
 
 //START WITH LAST PAGE OF THE ARRAY
-lastPage(currentPage);
+lastPage(currentIndex);
 
 //THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
-pullElement("#next_button").addEventListener("click", () => nextPage(currentPage));
-pullElement("#prev_button").addEventListener("click", () => prevPage(currentPage));
+pullElement("#next_button").addEventListener("click", () => nextPage(currentIndex));
+pullElement("#prev_button").addEventListener("click", () => prevPage(currentIndex));
 
 
 function lastPage(index){
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
-    console.log(currentPage);
+    console.log(currentIndex);
 
     loadProjects();
     return index;
@@ -34,10 +34,10 @@ function nextPage(index){
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
-    console.log(currentPage);
+    console.log(currentIndex);
 
     loadProjects();
-    return currentPage = index;
+    return currentIndex = index;
 }
 
 function prevPage(index){
@@ -45,10 +45,10 @@ function prevPage(index){
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
-    console.log(currentPage);
+    console.log(currentIndex);
 
     loadProjects();
-    return currentPage = index;
+    return currentIndex = index;
 }
 
 //THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE

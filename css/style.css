@@ -82,7 +82,7 @@ body .pages_controller a{
 }
 body .pages_controller a:hover{
     color: #00ff62;
-    box-shadow: 0px 0px 10px 3px #0e83baac;
+    box-shadow: 0px 0px 10px 1px #00b3ffd6;
 }
 footer{
     grid-area: footer;

@@ -1,13 +1,25 @@
 import Page01 from "./views/Page01.js";
 import Page02 from "./views/Page02.js";
-import Page03 from "./views/Page03.js";
 
 
 const pages = [
     {page: Page01},
     {page: Page02},
-    {page: Page03},
 ];
+
+/*
+const myPromise = new Promise((resolve, reject) => {
+    const random = Math.floor(Math.random() * 2);
+    if(random === 0){
+        resolve();
+    } else {
+        reject();
+    }
+})
+myPromise
+.then(() => console.log("Success!"))
+.catch(() => console.error("Something went wrong"));
+*/
 
 let currentIndex = pages.length - 1;
 

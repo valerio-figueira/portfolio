@@ -70,6 +70,7 @@ body .pages_controller a{
     font-weight: bolder;
     background-color: var(--prime-color);
     color: var(--light-green);
+    box-shadow: 0px 0px 7px 1px #00000072;
 
     margin: 20px 0;
     padding: 5px 15px;

@@ -1,155 +1,81 @@
-class Page01{
-    constructor(){
+import Page01 from "./views/Page01.js";
+import Page02 from "./views/Page02.js";
+import Page03 from "./views/Page03.js";
 
-    }
-    static getHtml(){
-        return `
-            <article class="post" id="turmalina">
-                <a><h2>Turmalina</h2></a>
-                <a><img src="imgs/Turmalina.png" alt="Turmalina"></a>
-                <p class="description"></p>
-            </article>
 
-            <article class="post" id="lapis-lazuli">
-                <a><h2>Lapis Lazuli</h2></a>
-                <a><img src="imgs/Lapis Lazuli.png" alt="Lapis Lazuli"></a>
-                <p class="description"></p>
-            </article>
-        `;
-    }
+const pages = [
+    {page: Page01},
+    {page: Page02},
+    {page: Page03},
+];
+
+let currentPage = pages.length - 1;
+
+//START WITH LAST PAGE OF THE ARRAY
+lastPage(currentPage);
+
+//THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
+pullElement("#next_button").addEventListener("click", () => nextPage(currentPage));
+pullElement("#prev_button").addEventListener("click", () => prevPage(currentPage));
+
+
+function lastPage(index){
+    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
+
+    buttonController(index);
+    console.log(currentPage);
+
+    loadProjects();
+    return index;
 }
 
-class Page02{
-    constructor(){
+function nextPage(index){
+    index = index - 1;
+    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
-    }
-    static getHtml(){
-        return `        
-        <h2 class="portfolium-title">Meu Portfólio</h2>
+    buttonController(index);
+    console.log(currentPage);
 
-        <article class="post" id="huddle">
-            <a><h2>Landing Page</h2></a>
-            <a><img src="imgs/Huddle-Landing-Page.png" alt="Huddle"></a>
-            <p class="description"></p>
-        </article>
-
-        <article class="post" id="ipma">
-            <a><h2>IPMA</h2></a>
-            <a><img src="imgs/IPMA.png" alt="IPMA"></a>
-            <p class="description"></p>
-        </article>
-
-        <article class="post" id="subscription-page">
-            <a><h2>Subscription Page</h2></a>
-            <a><img src="imgs/subscription-page.png" alt="Subscription Page"></a>
-            <p class="description"></p>
-        </article>
-
-        <article class="post" id="ruby">
-            <a><h2>Ruby Project</h2></a>
-            <a href="https://valerio-figueira.github.io/ruby-project/" target="_blank" rel="external"><img src="imgs/Ruby.png" alt="Ruby Project"></a>
-            <p class="description"></p>
-        </article>
-
-        <article class="post" id="jasper">
-            <a><h2>Jasper Project</h2></a>
-            <a><img src="imgs/Jasper.png" alt="Jasper Project"></a>
-            <p class="description"></p>
-        </article>
-
-        <article class="post" id="black-onyx">
-            <a><h2>Black Onyx</h2></a>
-            <a><img src="imgs/Black Onyx.png" alt="Black Onyx"></a>
-            <p class="description"></p>
-        </article>
-        `;
-    }
+    loadProjects();
+    return currentPage = index;
 }
 
+function prevPage(index){
+    index = index + 1;
+    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
+    buttonController(index);
+    console.log(currentPage);
 
-loadPages();
-
-if(pullElement(".portfolium").matches(".pag_02")){
-    pullElement("#next_button").style.display = "block";
-    pullElement("#prev_button").style.display = "none";
-
-    pullElement(".pages_controller").style.justifyContent = "end";
-} else {
-    pullElement("#next_button").style.display = "none";
-    pullElement("#prev_button").style.display = "block";
-
-    pullElement(".pages_controller").style.justifyContent = "start";
+    loadProjects();
+    return currentPage = index;
 }
 
-
-pullElement("#prev_button").addEventListener("click", () => {
-    const portfolium = pullElement(".portfolium").innerHTML = Page02.getHtml();
-    portfolium.className = "portfolium pag_02";
-    pullElement("#next_button").style.display = "block";
-    pullElement("#prev_button").style.display = "none";
-
-    pullElement(".pages_controller").style.justifyContent = "end";
-    
-
-    loadPages();
-})
-pullElement("#next_button").addEventListener("click", () => {
-    const portfolium = pullElement(".portfolium").innerHTML = Page01.getHtml();
-    portfolium.className += "portfolium pag_01";
-    pullElement("#next_button").style.display = "none";
-    pullElement("#prev_button").style.display = "block";
-
-    pullElement(".pages_controller").style.justifyContent = "start";
-
-    loadPages();
-})
-
-
-
-
-
-/*Mobile button to open vertical bar*/
-const mobile = document.querySelector(".mobile");
-const perfil = document.querySelector(".perfil");
-const icon = document.querySelector(".close-icon");
-
-mobile.addEventListener("click", function(){
-    if(perfil.className === "perfil"){
-        perfil.className += " open";
-    } else{
-        perfil.className = "perfil";
+//THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
+function buttonController(index){
+    if(index === pages.length -1){
+        pullElement("#next_button").style.display = "block";
+        pullElement("#prev_button").style.display = "none";
+        pullElement(".pages_controller").style.justifyContent = "end";
+    } else if (index < pages.length -1 && index > 0){
+        pullElement("#next_button").style.display = "block";
+        pullElement("#prev_button").style.display = "block";
+        pullElement(".pages_controller").style.justifyContent = "space-between";
+    } else if (index >= -1){
+        pullElement("#next_button").style.display = "none";
+        pullElement("#prev_button").style.display = "block";
+        pullElement(".pages_controller").style.justifyContent = "start";
     }
-})
-
-/*CLOSE BUTTON OF SIDE-COLUMN*/
-icon.addEventListener("click", function(){
-    perfil.className = "perfil";
-})
-
-
-
-/*COPYRIGHT DATE*/
-const copyright = document.querySelector(".copyright");
-const year = new Date().getFullYear();
-
-copyright.textContent = `\u00A9 Direitos Autorais - ${year}`;
-
-
-
-
-
-
-
-
+    return index;
+}
     
 
 
-function loadPages(){
+function loadProjects(){
 
     const linkText = " Preview";
 
-    
+
 
     /*INSERT URL IN CONTACT H2*/
     const contato = document.querySelector(".box h2");
@@ -404,3 +330,41 @@ function createList(list, description){
     list.appendChild(li);
     return li.innerHTML = description;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Mobile button to open vertical bar*/
+const mobile = document.querySelector(".mobile");
+const perfil = document.querySelector(".perfil");
+const icon = document.querySelector(".close-icon");
+
+mobile.addEventListener("click", function(){
+    if(perfil.className === "perfil"){
+        perfil.className += " open";
+    } else{
+        perfil.className = "perfil";
+    }
+})
+
+/*CLOSE BUTTON OF SIDE-COLUMN*/
+icon.addEventListener("click", function(){
+    perfil.className = "perfil";
+})
+
+
+
+/*COPYRIGHT DATE*/
+const copyright = document.querySelector(".copyright");
+const year = new Date().getFullYear();
+
+copyright.textContent = `\u00A9 Direitos Autorais - ${year}`;

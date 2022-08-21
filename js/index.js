@@ -1,12 +1,10 @@
 import Page01 from "./views/Page01.js";
 import Page02 from "./views/Page02.js";
 
-
 const pages = [
     {page: Page01},
     {page: Page02},
 ];
-
 /*
 const myPromise = new Promise((resolve, reject) => {
     const random = Math.floor(Math.random() * 2);
@@ -20,8 +18,8 @@ myPromise
 .then(() => console.log("Success!"))
 .catch(() => console.error("Something went wrong"));
 */
-
-let currentIndex = pages.length - 1;
+const redutor = 1;
+let currentIndex = pages.length - redutor;
 
 //START WITH LAST PAGE OF THE ARRAY
 lastPage(currentIndex);
@@ -42,7 +40,7 @@ function lastPage(index){
 }
 
 function nextPage(index){
-    index = index - 1;
+    index = index - redutor;
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
@@ -53,7 +51,7 @@ function nextPage(index){
 }
 
 function prevPage(index){
-    index = index + 1;
+    index = index + redutor;
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
@@ -65,18 +63,18 @@ function prevPage(index){
 
 //THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
 function buttonController(index){
-    if(index === pages.length -1){
+    if(index === pages.length - redutor){
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "none";
         pullElement(".pages_controller").style.justifyContent = "end";
-    } else if (index < pages.length -1 && index > 0){
+    } else if (index < pages.length - redutor && index > 0){
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "block";
         pullElement(".pages_controller").style.justifyContent = "space-between";
-    } else if (index >= -1){
+    } else if (index >= - redutor){
         pullElement("#next_button").style.display = "none";
         pullElement("#prev_button").style.display = "block";
-        pullElement(".pages_controller").style.justifyContent = "start";
+        pullElement(".pages_controller").style.justifyContent = "start";        
     }
     return index;
 }

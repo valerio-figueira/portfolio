@@ -18,18 +18,18 @@ myPromise
 .then(() => console.log("Success!"))
 .catch(() => console.error("Something went wrong"));
 */
-const redutor = 1;
-let currentIndex = pages.length - redutor;
+const reduction = 1;
+let currentIndex = pages.length - reduction;
 
 //START WITH LAST PAGE OF THE ARRAY
-lastPage(currentIndex);
+lastView(currentIndex);
 
 //THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
 pullElement("#next_button").addEventListener("click", () => nextPage(currentIndex));
 pullElement("#prev_button").addEventListener("click", () => prevPage(currentIndex));
 
 
-function lastPage(index){
+function lastView(index){
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
@@ -40,7 +40,7 @@ function lastPage(index){
 }
 
 function nextPage(index){
-    index = index - redutor;
+    index = index + reduction;
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
@@ -51,7 +51,7 @@ function nextPage(index){
 }
 
 function prevPage(index){
-    index = index + redutor;
+    index = index - reduction;
     pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
     buttonController(index);
@@ -63,18 +63,18 @@ function prevPage(index){
 
 //THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
 function buttonController(index){
-    if(index === pages.length - redutor){
+    if(index === pages.length - reduction){
+        pullElement("#next_button").style.display = "none";
+        pullElement("#prev_button").style.display = "block";
+        pullElement(".pages_controller").style.justifyContent = "end";
+    } else if (index === 0){
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "none";
-        pullElement(".pages_controller").style.justifyContent = "end";
-    } else if (index < pages.length - redutor && index > 0){
+        pullElement(".pages_controller").style.justifyContent = "start";        
+    } else {
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "block";
         pullElement(".pages_controller").style.justifyContent = "space-between";
-    } else if (index >= - redutor){
-        pullElement("#next_button").style.display = "none";
-        pullElement("#prev_button").style.display = "block";
-        pullElement(".pages_controller").style.justifyContent = "start";        
     }
     return index;
 }

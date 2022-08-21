@@ -164,12 +164,11 @@ function loadProjects(){
     /*TURMALINA*/
     const turmalina = pullElement("#turmalina .description");
     if(turmalina){
+        setAnchorAtributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
         turmalina.innerHTML = `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da`;
         turmalina.appendChild(createSimpleAnchor("https://www.rocketseat.com.br/", " rocketseat"));
         turmalina.innerHTML += `, do qual faço parte como estudante de programação.`;
         createAnchorWithAppend(turmalina, "https://valerio-figueira.github.io/turmalina-page/", linkText);
-
-        setAnchorAtributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
     }
 
 

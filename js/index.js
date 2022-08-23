@@ -1,28 +1,59 @@
-import Page01 from "./views/Page01.js";
-import Page02 from "./views/Page02.js";
-
-const pages = [
-    {page: Page01},
-    {page: Page02},
+const projects = [
+    {
+        name: "Lapis Lazuli",
+        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
+        img: "imgs/Lapis Lazuli.png",
+        url: "https://valerio-figueira.github.io/lapis-lazuli-page/",
+    },
+    {
+        name: "Turmalina",
+        description: "Um simples modelo de site, o qual tentei fazer \"imitando\" o modelo de site da rocketseat, do qual faço parte como estudante de programação.",
+        img: "imgs/Turmalina.png",
+        url: "https://valerio-figueira.github.io/turmalina-page/",
+    },
+    {
+        name: "Black Onyx",
+        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
+        img: "imgs/Black Onyx.png",
+        url: "https://valerio-figueira.github.io/black-onyx-page/",
+    },
+    {
+        name: "Jasper Project",
+        description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
+        img: "imgs/Jasper.png",
+        url: "https://valerio-figueira.github.io/jasper-project/",
+    },
+    {
+        name: "Ruby Project",
+        description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
+        img: "imgs/Ruby.png",
+        url: "https://valerio-figueira.github.io/ruby-project/",
+    },
+    {
+        name: "Subscription Page",
+        description: "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.",
+        img: "imgs/subscription-page.png",
+        url: "https://valerio-figueira.github.io/singlepage-subscription/",
+    },
+    {
+        name: "IPMA",
+        description: "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.",
+        img: "imgs/IPMA.png",
+        url: "https://www.ipmamonte.mg.gov.br/",
+    },
+    {
+        name: "Landing Page",
+        description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
+        img: "imgs/Huddle-Landing-Page.png",
+        url: "https://valerio-figueira.github.io/huddle-landing-page/",
+    },
 ];
-/*
-const myPromise = new Promise((resolve, reject) => {
-    const random = Math.floor(Math.random() * 2);
-    if(random === 0){
-        resolve();
-    } else {
-        reject();
-    }
-})
-myPromise
-.then(() => console.log("Success!"))
-.catch(() => console.error("Something went wrong"));
-*/
-const reduction = 1;
-let currentIndex = pages.length - reduction;
+
+//const reduction = 1;
+//let currentIndex = pages.length - reduction;
 
 //START WITH LAST PAGE OF THE ARRAY
-lastView(currentIndex);
+//lastView(currentIndex);
 
 //THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
 pullElement("#next_button").addEventListener("click", () => nextPage(currentIndex));
@@ -85,86 +116,18 @@ function loadProjects(){
 
     const linkText = " Preview";
 
-
-
-    /*INSERT URL IN CONTACT H2*/
-    const contato = document.querySelector(".box h2");
-    contato.style.cursor = "pointer";
-    contato.addEventListener("click", function(){
-        window.open("./index.html", "_self");
-    })
-
-    /*
-    Para treinar um pouco a interface DOM, irei colocar a descrição dos projetos pelo próprio javascript
-    */
-
-    /*About myself*/
-    const intro = document.querySelector(".paragraph");
-    intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScript e outras tecnologias. Além disso, tenho 8 meses de experiência com Java, o qual aprendi resolvendo diversas listas de exercícios para aprimoramento da lógica de programação.";
-
-
-    /*ADD EFFECT CLASS IN IMGs*/
-    const post = pullAllElements(".post .description");
-    for(let item of post){
-        item.previousElementSibling.className = "img-effect";
-    }
-
-
-
-
     const huddle = pullElement("#huddle .description");
     if(huddle){
         huddle.innerHTML = "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.";
         createAnchorWithAppend(huddle, "https://valerio-figueira.github.io/huddle-landing-page/", linkText);
 
-        setAnchorAtributes(pullAllElements("#huddle a"), "https://valerio-figueira.github.io/huddle-landing-page/");
-    }
-
-    const ipma = pullElement("#ipma .description");
-    if(ipma){
-        ipma.innerHTML = "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.";
-        createAnchorWithAppend(ipma, "https://www.ipmamonte.mg.gov.br/", linkText);
-
-        setAnchorAtributes(pullAllElements("#ipma a"), "https://www.ipmamonte.mg.gov.br/");
-    }
-
-    /*SUBSCRIPTION PAGE - PROJECT (DESCRIPTION OF IT AND LINK)*/
-    const subscriptionPage = pullElement("#subscription-page .description");
-    if(subscriptionPage){
-        subscriptionPage.innerHTML = "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.";
-        createAnchorWithAppend(subscriptionPage, "https://valerio-figueira.github.io/singlepage-subscription/", linkText);
-
-        setAnchorAtributes(pullAllElements("#subscription-page a"), "https://valerio-figueira.github.io/singlepage-subscription/");
-    }
-
-    const ruby = pullElement("#ruby .description");
-    if(ruby){
-        ruby.innerHTML = "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc."
-        createAnchorWithAppend(ruby, "https://valerio-figueira.github.io/ruby-project/", linkText);
-
-        setAnchorAtributes(pullAllElements("#ruby a"), "https://valerio-figueira.github.io/ruby-project/");
-    }
-
-    const jasper = pullElement("#jasper .description");
-    if(jasper){
-        jasper.innerHTML = "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.";
-        createAnchorWithAppend(jasper, "https://valerio-figueira.github.io/jasper-project/", linkText);
-
-        setAnchorAtributes(pullAllElements("#jasper a"), "https://valerio-figueira.github.io/jasper-project/");
-    }
-
-    const blackOnyx = pullElement("#black-onyx .description");
-    if(blackOnyx){
-        blackOnyx.innerHTML = "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.";
-        createAnchorWithAppend(blackOnyx, "https://valerio-figueira.github.io/black-onyx-page/", linkText);
-
-        setAnchorAtributes(pullAllElements("#black-onyx a"), "https://valerio-figueira.github.io/black-onyx-page/");
+        setAnchorAttributes(pullAllElements("#huddle a"), "https://valerio-figueira.github.io/huddle-landing-page/");
     }
 
     /*TURMALINA*/
     const turmalina = pullElement("#turmalina .description");
     if(turmalina){
-        setAnchorAtributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
+        setAnchorAttributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
         turmalina.innerHTML = `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da`;
         turmalina.appendChild(createSimpleAnchor("https://www.rocketseat.com.br/", " rocketseat"));
         turmalina.innerHTML += `, do qual faço parte como estudante de programação.`;
@@ -172,30 +135,44 @@ function loadProjects(){
     }
 
 
-    const lapisLazuli = pullElement("#lapis-lazuli .description");
-    if(lapisLazuli){
-        lapisLazuli.innerHTML = "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.";
-        createAnchorWithAppend(lapisLazuli, "https://valerio-figueira.github.io/lapis-lazuli-page/", linkText);
-
-        setAnchorAtributes(pullAllElements("#lapis-lazuli a"), "https://valerio-figueira.github.io/lapis-lazuli-page/");
-    }
-
-
 }
 
 
 
+function insertHTML() {
+    const posts = document.querySelectorAll(".portfolium .post");
+    let currentIndex = projects.length - 1;
+
+    for(let i = 0; i < posts.length; i++, currentIndex--){
+        posts[i].children[0].firstElementChild.innerHTML = projects[currentIndex].name;
+        setImageAttributes(posts[i].children[1].firstChild, projects[currentIndex].img, projects[currentIndex].name);
+        posts[i].children[2].innerHTML = projects[currentIndex].description;
+    }
+}
+
+insertHTML()
 
 
 
 
+/*About myself*/
+const intro = document.querySelector(".paragraph");
+intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScript e outras tecnologias. Além disso, tenho 8 meses de experiência com Java, o qual aprendi resolvendo diversas listas de exercícios para aprimoramento da lógica de programação.";
 
 
+/*ADD EFFECT CLASS IN IMGs*/
+const post = pullAllElements(".post .description");
+for(let item of post){
+    item.previousElementSibling.className = "img-effect";
+}
 
 
-
-
-
+/*INSERT URL IN CONTACT H2*/
+const contato = document.querySelector(".box h2");
+contato.style.cursor = "pointer";
+contato.addEventListener("click", function(){
+    window.open("./index.html", "_self");
+})
 
 
 /*Github LINK*/
@@ -306,13 +283,18 @@ function pullAllElements(id){
 let pullElements = (id) => {
     document.querySelectorAll(id);
 }
-function setAnchorAtributes(elements, url){
+function setAnchorAttributes(elements, url){
     for(let element of elements){
         element.setAttribute("href", url);
         element.setAttribute("target", "_blank");
         element.setAttribute("rel", "external");
     }
     return elements;
+}
+function setImageAttributes(image, url, alt){
+    image.setAttribute("src", url);
+    image.setAttribute("alt", alt);
+    return image;
 }
 function createContactInfo(description, url, iconName){
     let anchor = document.createElement("a");

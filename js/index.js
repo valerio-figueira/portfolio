@@ -1,156 +1,137 @@
 const projects = [
     {
-        name: "Lapis Lazuli",
-        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
-        img: "imgs/Lapis Lazuli.png",
-        url: "https://valerio-figueira.github.io/lapis-lazuli-page/",
-    },
-    {
-        name: "Turmalina",
-        description: "Um simples modelo de site, o qual tentei fazer \"imitando\" o modelo de site da rocketseat, do qual faço parte como estudante de programação.",
-        img: "imgs/Turmalina.png",
-        url: "https://valerio-figueira.github.io/turmalina-page/",
-    },
-    {
-        name: "Black Onyx",
-        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
-        img: "imgs/Black Onyx.png",
-        url: "https://valerio-figueira.github.io/black-onyx-page/",
-    },
-    {
-        name: "Jasper Project",
-        description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
-        img: "imgs/Jasper.png",
-        url: "https://valerio-figueira.github.io/jasper-project/",
-    },
-    {
-        name: "Ruby Project",
-        description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
-        img: "imgs/Ruby.png",
-        url: "https://valerio-figueira.github.io/ruby-project/",
-    },
-    {
-        name: "Subscription Page",
-        description: "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.",
-        img: "imgs/subscription-page.png",
-        url: "https://valerio-figueira.github.io/singlepage-subscription/",
+        name: "Landing Page",
+        description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
+        img: "imgs/Huddle-Landing-Page.png",
+        url: "https://valerio-figueira.github.io/huddle-landing-page/"
     },
     {
         name: "IPMA",
         description: "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.",
         img: "imgs/IPMA.png",
-        url: "https://www.ipmamonte.mg.gov.br/",
+        url: "https://www.ipmamonte.mg.gov.br/"
     },
     {
-        name: "Landing Page",
-        description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
-        img: "imgs/Huddle-Landing-Page.png",
-        url: "https://valerio-figueira.github.io/huddle-landing-page/",
+        name: "Subscription Page",
+        description: "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.",
+        img: "imgs/subscription-page.png",
+        url: "https://valerio-figueira.github.io/singlepage-subscription/"
+    },
+    {
+        name: "Ruby Project",
+        description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
+        img: "imgs/Ruby.png",
+        url: "https://valerio-figueira.github.io/ruby-project/"
+    },
+    {
+        name: "Jasper Project",
+        description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
+        img: "imgs/Jasper.png",
+        url: "https://valerio-figueira.github.io/jasper-project/"
+    },
+    {
+        name: "Black Onyx",
+        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
+        img: "imgs/Black Onyx.png",
+        url: "https://valerio-figueira.github.io/black-onyx-page/"
+    },
+    {
+        name: "Turmalina",
+        description: `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da <a href="https://www.rocketseat.com.br/" target="_blank" rel="external">rocketseat</a>, do qual faço parte como estudante de programação.`,
+        img: "imgs/Turmalina.png",
+        url: "https://valerio-figueira.github.io/turmalina-page/"
+    },
+    {
+        name: "Lapis Lazuli",
+        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
+        img: "imgs/Lapis Lazuli.png",
+        url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
+    },
+    {
+        name: "Black Onyx",
+        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
+        img: "imgs/Black Onyx.png",
+        url: "https://valerio-figueira.github.io/black-onyx-page/"
+    },
+    {
+        name: "Turmalina",
+        description: "Um simples modelo de site, o qual tentei fazer \"imitando\" o modelo de site da rocketseat, do qual faço parte como estudante de programação.",
+        img: "imgs/Turmalina.png",
+        url: "https://valerio-figueira.github.io/turmalina-page/"
+    },
+    {
+        name: "Lapis Lazuli",
+        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
+        img: "imgs/Lapis Lazuli.png",
+        url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
     },
 ];
 
-//const reduction = 1;
-//let currentIndex = pages.length - reduction;
-
-//START WITH LAST PAGE OF THE ARRAY
-//lastView(currentIndex);
-
-//THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
-pullElement("#next_button").addEventListener("click", () => nextPage(currentIndex));
-pullElement("#prev_button").addEventListener("click", () => prevPage(currentIndex));
 
 
-function lastView(index){
-    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
 
-    buttonController(index);
-    console.log(currentIndex);
-
-    loadProjects();
-    return index;
-}
-
-function nextPage(index){
-    index = index + reduction;
-    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
-
-    buttonController(index);
-    console.log(currentIndex);
-
-    loadProjects();
-    return currentIndex = index;
-}
-
-function prevPage(index){
-    index = index - reduction;
-    pullElement(".portfolium").innerHTML = pages[index].page.getHtml();
-
-    buttonController(index);
-    console.log(currentIndex);
-
-    loadProjects();
-    return currentIndex = index;
-}
 
 //THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
-function buttonController(index){
-    if(index === pages.length - reduction){
+function buttonController(start, end){
+    if(start === 0){
         pullElement("#next_button").style.display = "none";
         pullElement("#prev_button").style.display = "block";
         pullElement(".pages_controller").style.justifyContent = "end";
-    } else if (index === 0){
+    } else if (end >= projects.length){
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "none";
-        pullElement(".pages_controller").style.justifyContent = "start";        
+        pullElement(".pages_controller").style.justifyContent = "start";
     } else {
         pullElement("#next_button").style.display = "block";
         pullElement("#prev_button").style.display = "block";
         pullElement(".pages_controller").style.justifyContent = "space-between";
     }
-    return index;
-}
-    
-
-
-function loadProjects(){
-
-    const linkText = " Preview";
-
-    const huddle = pullElement("#huddle .description");
-    if(huddle){
-        huddle.innerHTML = "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.";
-        createAnchorWithAppend(huddle, "https://valerio-figueira.github.io/huddle-landing-page/", linkText);
-
-        setAnchorAttributes(pullAllElements("#huddle a"), "https://valerio-figueira.github.io/huddle-landing-page/");
-    }
-
-    /*TURMALINA*/
-    const turmalina = pullElement("#turmalina .description");
-    if(turmalina){
-        setAnchorAttributes(pullAllElements("#turmalina a"), "https://valerio-figueira.github.io/turmalina-page/");
-        turmalina.innerHTML = `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da`;
-        turmalina.appendChild(createSimpleAnchor("https://www.rocketseat.com.br/", " rocketseat"));
-        turmalina.innerHTML += `, do qual faço parte como estudante de programação.`;
-        createAnchorWithAppend(turmalina, "https://valerio-figueira.github.io/turmalina-page/", linkText);
-    }
-
-
+    return start, end;
 }
 
+//SEARCH BAR
+const searchBar = document.querySelector("#searchBar");
+searchBar.addEventListener("keyup", (e) => {
+    const searchString = e.target.value.toLowerCase();
+    const filteredProjects = projects.filter((project) => {
+        return (
+            project.name.toLowerCase().includes(searchString) || project.description.toLowerCase().includes(searchString)
+        );
+    });
+    displayProjects(filteredProjects);
+})
 
 
-function insertHTML() {
-    const posts = document.querySelectorAll(".portfolium .post");
-    let currentIndex = projects.length - 1;
 
-    for(let i = 0; i < posts.length; i++, currentIndex--){
-        posts[i].children[0].firstElementChild.innerHTML = projects[currentIndex].name;
-        setImageAttributes(posts[i].children[1].firstChild, projects[currentIndex].img, projects[currentIndex].name);
-        posts[i].children[2].innerHTML = projects[currentIndex].description;
-    }
+let indexStart = 0;
+let indexEnd = 4;
+displayProjects(projects, indexStart, indexEnd);
+
+//THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
+pullElement("#next_button").addEventListener("click", () => displayProjects(projects, indexStart -= 4, indexEnd -= 4));
+pullElement("#prev_button").addEventListener("click", () => displayProjects(projects, indexStart += 4, indexEnd += 4));
+
+
+//DISPLAY THE PROJECTS IN THE PAGE
+function displayProjects(projects, start, end){
+    const portfolium = document.querySelector(".portfolium");
+    const html = projects.slice(start, end).map((project) => {
+        return `
+        <article class="post">
+            <a href="${project.url}" target="_blank" rel="external"><h2 class="project_title">${project.name}</h2></a>
+            <a href="${project.url}" target="_blank" rel="external"><img src="${project.img}" alt="${project.name}"></a>
+            <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Preview</a></p>
+        </article>
+        `;
+    })
+    .join('');
+    buttonController(start, end);
+    portfolium.innerHTML = html;    
+    return indexStart = start, indexEnd = end;
 }
 
-insertHTML()
+
+
 
 
 
@@ -222,34 +203,6 @@ createList(list, "Hardware");
 createList(list, "Redes LAN-WAN");
 createList(list, "Hardware");
 createList(list, "Rede de Computadores");
-
-
-
-
-
-
-
-
-
-/*
-TEXT INSIDE IMG
-
-let imgs = document.querySelectorAll(".img-effect");
-for(let img of imgs){
-    createParagraphs(img);
-    img.style.position = "relative";
-    img.lastChild.className = "center-text";
-}
-
-function createParagraphs(img){
-    let p = document.createElement("p");
-    p.innerText = "Preview";
-    p.style.textAlign = "center";
-    p.style.verticalAlign = "middle";
-    img.appendChild(p);
-    return img;
-}
-*/
 
 
 

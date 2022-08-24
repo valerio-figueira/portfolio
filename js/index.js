@@ -77,17 +77,6 @@ function buttonController(start, end){
     return start, end;
 }
 
-//SEARCH BAR
-const searchBar = document.querySelector("#searchBar");
-searchBar.addEventListener("keyup", (e) => {
-    const searchString = e.target.value.toLowerCase();
-    const filteredProjects = projects.filter((project) => {
-        return (
-            project.name.toLowerCase().includes(searchString) || project.description.toLowerCase().includes(searchString)
-        );
-    });
-    displayProjects(filteredProjects);
-})
 
 
 
@@ -111,14 +100,18 @@ function displayProjects(projects, start, end){
             <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Preview</a></p>
         </article>
         `;
-    })
-    .join('');
+    }).join('');
+
     buttonController(start, end);
-    portfolium.innerHTML = html;    
+
+    portfolium.innerHTML = `
+        <h2 class="portfolium-title">Meu Portfólio</h2>
+    `;
+    portfolium.innerHTML += html;
+    getShadowEffect();
+
     return indexStart = start, indexEnd = end;
-}
-
-
+};
 
 
 
@@ -130,10 +123,12 @@ intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScri
 
 
 /*ADD EFFECT CLASS IN IMGs*/
-const post = pullAllElements(".post .description");
-for(let item of post){
-    item.previousElementSibling.className = "img-effect";
-}
+function getShadowEffect(){
+    const post = pullAllElements(".post .description");
+    for(let item of post){
+        item.previousElementSibling.className = "img-effect";
+    };
+};
 
 
 /*INSERT URL IN CONTACT H2*/
@@ -262,14 +257,6 @@ function createList(list, description){
     list.appendChild(li);
     return li.innerHTML = description;
 }
-
-
-
-
-
-
-
-
 
 
 

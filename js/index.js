@@ -1,5 +1,11 @@
 const projects = [
     {
+        name: "Four Cards",
+        description: "Simples website feito com HTML e CSS. Alinhamento dos cartões feito com gridlayout.",
+        img: "imgs/Four-Cards-Page.png",
+        url: "https://valerio-figueira.github.io/four-cards-page/"
+    },
+    {
         name: "Landing Page",
         description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
         img: "imgs/Huddle-Landing-Page.png",
@@ -46,25 +52,7 @@ const projects = [
         description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
         img: "imgs/Lapis Lazuli.png",
         url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
-    },
-    {
-        name: "Black Onyx",
-        description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
-        img: "imgs/Black Onyx.png",
-        url: "https://valerio-figueira.github.io/black-onyx-page/"
-    },
-    {
-        name: "Turmalina",
-        description: "Um simples modelo de site, o qual tentei fazer \"imitando\" o modelo de site da rocketseat, do qual faço parte como estudante de programação.",
-        img: "imgs/Turmalina.png",
-        url: "https://valerio-figueira.github.io/turmalina-page/"
-    },
-    {
-        name: "Lapis Lazuli",
-        description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
-        img: "imgs/Lapis Lazuli.png",
-        url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
-    },
+    }
 ];
 
 

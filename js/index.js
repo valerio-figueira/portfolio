@@ -1,9 +1,9 @@
 const projects = [
     {
-        name: "",
-        description: "",
-        img: "imgs/.png",
-        url: "https://valerio-figueira.github.io/four-cards-page/"
+        name: "Base Apparel",
+        description: "Uma landing page de vestuário feminino, com entrada de cadastro para lista de e-mails, feita em HTML e CSS.",
+        img: "imgs/base-apparel.png",
+        url: "https://valerio-figueira.github.io/base-apparel-page/"
     },
     {
         name: "Four Cards",

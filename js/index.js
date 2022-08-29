@@ -73,18 +73,16 @@ const projects = [
 
 //THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
 function buttonController(start, end){
+    pullElement(".pages_controller").style.justifyContent = "space-between";
     if(start === 0){
-        pullElement("#next_button").style.display = "none";
-        pullElement("#prev_button").style.display = "block";
-        pullElement(".pages_controller").style.justifyContent = "end";
+        pullElement("#next_button").disabled = true;
+        pullElement("#prev_button").disabled = false;
     } else if (end >= projects.length){
-        pullElement("#next_button").style.display = "block";
-        pullElement("#prev_button").style.display = "none";
-        pullElement(".pages_controller").style.justifyContent = "start";
+        pullElement("#next_button").disabled = false;
+        pullElement("#prev_button").disabled = true;
     } else {
-        pullElement("#next_button").style.display = "block";
-        pullElement("#prev_button").style.display = "block";
-        pullElement(".pages_controller").style.justifyContent = "space-between";
+        pullElement("#next_button").disabled = false;
+        pullElement("#prev_button").disabled = false;        
     }
     return start, end;
 }
@@ -94,11 +92,12 @@ function buttonController(start, end){
 
 let indexStart = 0;
 let indexEnd = 4;
+let indexPoint = 4;
 displayProjects(projects, indexStart, indexEnd);
 
 //THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
-pullElement("#next_button").addEventListener("click", () => displayProjects(projects, indexStart -= 4, indexEnd -= 4));
-pullElement("#prev_button").addEventListener("click", () => displayProjects(projects, indexStart += 4, indexEnd += 4));
+pullElement("#next_button").addEventListener("click", () => displayProjects(projects, indexStart -= indexPoint, indexEnd -= indexPoint));
+pullElement("#prev_button").addEventListener("click", () => displayProjects(projects, indexStart += indexPoint, indexEnd += indexPoint));
 
 
 //DISPLAY THE PROJECTS IN THE PAGE
@@ -106,7 +105,7 @@ function displayProjects(projects, start, end){
     const portfolium = document.querySelector(".portfolium");
     const html = projects.slice(start, end).map((project) => {
         return `
-        <article class="post">
+        <article class="post project">
             <a href="${project.url}" target="_blank" rel="external"><h2 class="project_title">${project.name}</h2></a>
             <a href="${project.url}" target="_blank" rel="external" class="bg-shadow"><img src="${project.img}" alt="${project.name}" class="img-effect"></a>
             <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Preview</a></p>
@@ -274,9 +273,9 @@ const icon = document.querySelector(".close-icon");
 
 mobile.addEventListener("click", function(){
     if(perfil.className === "perfil"){
-        perfil.className += " open";
+        perfil.classList.add("open");
     } else{
-        perfil.className = "perfil";
+        perfil.classList.remove("open");
     }
 })
 

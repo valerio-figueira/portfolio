@@ -26,7 +26,6 @@ html{
     box-sizing: border-box;
 }
 
-
 /*
 GRID-LAYOUT
 */
@@ -43,7 +42,7 @@ GRID-LAYOUT
     min-width: var(--min-width);
     margin: auto;    
 
-    background-color: #ececec;    
+    background-color: var(--background-color);    
     box-shadow: 0px 0px 10px 2px #0000007b;
     transition: 0.5s;
 }
@@ -122,23 +121,22 @@ MY PORTFOLIUM, CREATED WITH GRID
     width: 100%;
     box-shadow: 0px 0px 5px 2px #00000052;
     opacity: 1;
-    transition: 0.5s;
-
-    margin: 0 0 -4px;
-}
-.portfolium img:hover{
-    box-shadow: none;
-    opacity: 0.8;
-}
-.img-effect{
-    display: block;
     transition: 0.7s;
+    outline: 2px solid transparent;
 }
-.img-effect:hover{
-    box-shadow: 0px 0px 10px 3px #0e83baac, inset 0px 0px 70px 40px #000;
+.portfolium .img-effect:hover{
+    transition: 0.5s;
+    animation-name: cintilar;
+    animation-iteration-count: infinite;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-duration: 1s;
+    opacity: 0.8;    
 }
-
-
+.bg-shadow{
+    display: flex;
+    box-shadow: inset 0px 0px 70px 30px black;
+}
 
 
 /*SIDE-COLUMN*/
@@ -185,4 +183,15 @@ MY PORTFOLIUM, CREATED WITH GRID
 #searchBar{
     padding: 6px;
     margin-left: 10px;
+}
+
+
+
+@keyframes cintilar{
+    from{
+        box-shadow: 0px 0px 5px 2px #0095ffac;
+    }
+    to{
+        box-shadow: 0px 0px 10px 2px #0095ffac;
+    }
 }

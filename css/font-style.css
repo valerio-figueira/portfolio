@@ -193,3 +193,13 @@ LINKS DENTRO DO ARTICLE
     text-shadow: 2px 2px 1px #fff;
 }
 */
+
+
+@keyframes twink{
+    from{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}

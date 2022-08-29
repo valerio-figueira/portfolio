@@ -1,5 +1,11 @@
 const projects = [
     {
+        name: "Portfolium Novum",
+        description: "Modelo de site para portfólio. Feito em HTML e CSS. Aqui tive meu primeiro contato com a propriedade @Keyframe (animation), e seus diversos atributos.",
+        img: "imgs/portfolium-novum.png",
+        url: "https://valerio-figueira.github.io/portfolium_novum/"
+    },
+    {
         name: "Base Apparel",
         description: "Uma landing page de vestuário feminino, com entrada de cadastro para lista de e-mails, feita em HTML e CSS.",
         img: "imgs/base-apparel.png",
@@ -7,14 +13,14 @@ const projects = [
     },
     {
         name: "Four Cards",
-        description: "Simples website feito com HTML e CSS. Alinhamento dos cartões feito com gridlayout.",
-        img: "imgs/Four-Cards-Page.png",
+        description: "Uma simples página web feita com HTML e CSS. Alinhamento dos cartões feito com gridlayout.",
+        img: "imgs/four-cards-page.png",
         url: "https://valerio-figueira.github.io/four-cards-page/"
     },
     {
         name: "Landing Page",
         description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
-        img: "imgs/Huddle-Landing-Page.png",
+        img: "imgs/huddle-landing-page.png",
         url: "https://valerio-figueira.github.io/huddle-landing-page/"
     },
     {
@@ -32,31 +38,31 @@ const projects = [
     {
         name: "Ruby Project",
         description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
-        img: "imgs/Ruby.png",
+        img: "imgs/ruby.png",
         url: "https://valerio-figueira.github.io/ruby-project/"
     },
     {
         name: "Jasper Project",
         description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
-        img: "imgs/Jasper.png",
+        img: "imgs/jasper.png",
         url: "https://valerio-figueira.github.io/jasper-project/"
     },
     {
         name: "Black Onyx",
         description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
-        img: "imgs/Black Onyx.png",
+        img: "imgs/black-onyx.png",
         url: "https://valerio-figueira.github.io/black-onyx-page/"
     },
     {
         name: "Turmalina",
         description: `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da <a href="https://www.rocketseat.com.br/" target="_blank" rel="external">rocketseat</a>, do qual faço parte como estudante de programação.`,
-        img: "imgs/Turmalina.png",
+        img: "imgs/turmalina.png",
         url: "https://valerio-figueira.github.io/turmalina-page/"
     },
     {
         name: "Lapis Lazuli",
         description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
-        img: "imgs/Lapis Lazuli.png",
+        img: "imgs/lapis-lazuli.png",
         url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
     }
 ];
@@ -102,7 +108,7 @@ function displayProjects(projects, start, end){
         return `
         <article class="post">
             <a href="${project.url}" target="_blank" rel="external"><h2 class="project_title">${project.name}</h2></a>
-            <a href="${project.url}" target="_blank" rel="external"><img src="${project.img}" alt="${project.name}"></a>
+            <a href="${project.url}" target="_blank" rel="external" class="bg-shadow"><img src="${project.img}" alt="${project.name}" class="img-effect"></a>
             <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Preview</a></p>
         </article>
         `;
@@ -114,7 +120,6 @@ function displayProjects(projects, start, end){
         <h2 class="portfolium-title">Meu Portfólio</h2>
     `;
     portfolium.innerHTML += html;
-    getShadowEffect();
 
     return indexStart = start, indexEnd = end;
 };
@@ -128,13 +133,7 @@ const intro = document.querySelector(".paragraph");
 intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScript e outras tecnologias. Além disso, tenho 8 meses de experiência com Java, o qual aprendi resolvendo diversas listas de exercícios para aprimoramento da lógica de programação.";
 
 
-/*ADD EFFECT CLASS IN IMGs*/
-function getShadowEffect(){
-    const post = pullAllElements(".post .description");
-    for(let item of post){
-        item.previousElementSibling.className = "img-effect";
-    };
-};
+
 
 
 /*INSERT URL IN CONTACT H2*/

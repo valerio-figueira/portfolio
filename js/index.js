@@ -1,7 +1,7 @@
 const projects = [
     {
         name: "Portfolium Novum",
-        description: "Modelo de site para portfólio. Feito em HTML e CSS. Aqui tive meu primeiro contato com a propriedade @Keyframe (animation), e seus diversos atributos.",
+        description: "Modelo de site para portfólio. Feito em HTML, CSS e Javascript. Todos os projetos foram inseridos dinamicamente pelo Javascript.",
         img: "imgs/portfolium-novum.png",
         url: "https://valerio-figueira.github.io/portfolium_novum/"
     },
@@ -188,7 +188,6 @@ createList(list, "CSS Grid Layout");
 createList(list, "Linux");
 createList(list, "Hardware");
 createList(list, "Redes LAN-WAN");
-createList(list, "Hardware");
 createList(list, "Rede de Computadores");
 
 

@@ -141,7 +141,7 @@ MY PORTFOLIUM, CREATED WITH GRID
     transition: 0.5s;
     animation-name: cintilar;
     animation-iteration-count: infinite;
-    animation-delay: 0;
+    animation-delay: 0s;
     animation-direction: alternate;
     animation-duration: 1s;
     opacity: 0.8;    

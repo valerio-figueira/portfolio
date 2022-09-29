@@ -1,5 +1,11 @@
 const projects = [
     {
+        name: "Ecommerce",
+        description: "Um ecommerce feito dinamicamente com Javascript e com regras de lógica para controle de preços.",
+        img: "imgs/ecommerce.png",
+        url: "https://valerio-figueira.github.io/ecommerce/"
+    },
+    {
         name: "Portfolium Novum",
         description: "Modelo de site para portfólio. Feito em HTML, CSS e Javascript. Todos os projetos foram inseridos dinamicamente pelo Javascript.",
         img: "imgs/portfolium-novum.png",
@@ -108,7 +114,7 @@ function displayProjects(projects, start, end){
         <article class="post project">
             <a href="${project.url}" target="_blank" rel="external"><h2 class="project_title">${project.name}</h2></a>
             <a href="${project.url}" target="_blank" rel="external" class="bg-shadow"><img src="${project.img}" alt="${project.name}" class="img-effect"></a>
-            <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Preview</a></p>
+            <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Saiba mais</a></p>
         </article>
         `;
     }).join('');

@@ -95,7 +95,7 @@ body .pages_controller button[disabled]:hover{
 footer{
     grid-area: footer;
     font-style: italic;   
-    padding: 50px 20px 30px; 
+    padding: 50px 20px 30px;
 }
 
 
@@ -150,7 +150,6 @@ MY PORTFOLIUM, CREATED WITH GRID
     display: flex;
     box-shadow: inset 0px 0px 70px 30px black;
 }
-
 
 /*SIDE-COLUMN*/
 .about{

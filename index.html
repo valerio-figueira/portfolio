@@ -4,62 +4,98 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio - Valerio Figueira</title>
+    <title>Portfólio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="shortcut icon" href="imgs/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/font-style.css">
-    <script src="js/index.js" defer></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/index.js" defer></script>
 </head>
+<body class="grid">
+    <header class="h_flex background-img" id="home">
+        <nav class="navbar flex_nav">
+            <a href="./index.html">
+                <h2>D<span>eveloper</span></h2>
+            </a>
+            <div class="nav_links">
+                <a href="./index.html">Home</a>
+                <a href="#about">Sobre</a>
+                <a href="#services">Serviços</a>
+                <a href="#portfolium">Portfólio</a>
+                <a href="#contact">Contato</a>
+                <button class="close-nav">&times;</button>
+            </div>            
+            <button class="fa fa-bars mobile-icon"></button>
+        </nav>
 
-<body class="grid-layout container">
-
-
-    <header class="flex top">
-        <h1 class="main-title"></h1>
-        <h2 class="subtitle"></h2>
-
-        <span class="mobile">
-            <a href="#bar" class="fa fa-bars"></a>
-        </span>
-
-        <article class="about">
-            <h2></h2>
-            <p class="paragraph"></p>
-            <p class="github"></p>
-        </article>
+        <div class="box">
+            <div class="inner-shadow"><img src="imgs/myself-round.png" alt="avatar"></div>
+            <h1>Valerio</h1>
+            <p>Student & Web Developer - Frontend</p>
+        </div>
     </header>
 
-
-
-
-    <div class="perfil">
-        <img src="imgs/VALERIO.jpg" alt="avatar" class="avatar">
-        <button class="fa fa-close close-icon"></button>
-        <section class="flex">
-            <article class="box">
-                <h2>Contato</h2>
+    <main class="content">
+        <section class="section-01 reveal">
+            <article id="about">
+                <img src="imgs/Myself.png" alt="avatar">
+                <h2><span class="border_bottom view-word">Sobre</span></h2>
+                <p>Olá! Sou estudante de tecnologias web e desenvolvedor frontend. Faço projetos com Javascript, React, HTML e CSS.</p>
+                <div class="colored_border flex_list box">
+                    <ul>
+                        <li>Nome: Valerio Figueira</li>
+                        <li>Tel: 34 99971-3607</li>
+                        <li>Experiência: Em busca dela</li>
+                    </ul>
+                    <ul>
+                        <li class="age"></li>
+                        <li>End.: Monte Alegre de Minas, MG</li>
+                        <li>Freelance: Disponível</li>
+                    </ul>
+                </div>
             </article>
-            <article class="box"></article>
         </section>
-    </div>
+        <section class="section-02 reveal">
+            <article id="services">
+                <h2><span class="border_bottom">Serviços</span></h2>
+                <div class="box colored_border">
+                    <h3>Javascript & Git</h3>
+                    <p>Meus projetos web são feitos em Javascript (ES6). Páginas dinâmicas, utilização de API, manipulação DOM, programação funcional, entre outros detalhes.</p>
+                    <p>Além disso, faço uso do github para versionamento dos projetos.</p>
+                </div>
+                <div class="box colored_border">
+                    <h3>HTML & CSS</h3>
+                    <p>Algumas propriedades de estilização utilizadas: Flexbox, GridLayout, Absolute position, Float, MediaQueries, Animation, etc.</p>
+                    <p>Minhas principais bases de HTML e CSS provém dos cursos do professor Guanabara.</p>
+                </div>
+                <div class="box colored_border">
+                    <h3>Competências</h3>
+                    <ul>
+                        <li>Javascript</li>
+                        <li>Java</li>
+                        <li>Github</li>
+                        <li>React / NPM</li>
+                        <li>HTML & CSS</li>
+                        <li>Linux</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+        <section class="section-03 reveal" id="section-03">
+            <article class="box">
+                <h2><span class="border_bottom view-word">Portfólio</span></h2>
+                <p>Todos os meus projetos, publicados aqui em meu portfólio, são feitos seguindo a minha linha de evolução e aprendizado. Inclusive a publicação deste portfólio.</p>
+            </article>
+            <section class="portfolium" id="portfolium"></section>
+            <div class="controller">
+                <button class="fa fa-angle-double-left" id="next"></button>
+                <button class="fa fa-angle-double-right" id="prev"></button>
+            </div>
+        </section>
+    </main>
 
-
-
-    <main class="portfolium"></main>
-
-    <div class="pages_controller">
-        <button class="fa fa-angle-double-left" id="next_button"></button>
-        <button class="fa fa-angle-double-right" id="prev_button"></button>
-    </div>
-
-
-    <footer class="flex-row">
+    <footer class="section-04 reveal" id="contact">        
+        <div class="social"></div>
         <p class="copyright"></p>
-        <a href="#top" class="scrolltop fa fa-caret-up"></a>
+        <button class="fa fa-angle-up up-btn"></button>
     </footer>
-
-
 </body>
 </html>

@@ -1,298 +1,196 @@
 const projects = [
     {
         name: "Ecommerce",
+        description: "Mais um ecommerce trabalhado com Javascript ES6.",
+        img: "imgs/Projetos/new-ecommerce.webp",
+        url: "https://valerio-figueira.github.io/ecommerce-js/"
+    },
+    {
+        name: "Harry Potter Gallery - API",
+        description: "Galeria de fotos com personagens do filme Harry Potter, utilizando a função fetch para consumo de API.",
+        img: "imgs/Projetos/hp-gallery.webp",
+        url: "https://valerio-figueira.github.io/harrypotter-characters/"
+    },
+    {
+        name: "Ecommerce",
         description: "Um ecommerce feito dinamicamente com Javascript e com regras de lógica para controle de preços.",
-        img: "imgs/ecommerce.png",
+        img: "imgs/Projetos/ecommerce.webp",
         url: "https://valerio-figueira.github.io/ecommerce/"
     },
     {
         name: "Portfolium Novum",
         description: "Modelo de site para portfólio. Feito em HTML, CSS e Javascript. Todos os projetos foram inseridos dinamicamente pelo Javascript.",
-        img: "imgs/portfolium-novum.png",
+        img: "imgs/Projetos/portfolium-novum.webp",
         url: "https://valerio-figueira.github.io/portfolium_novum/"
     },
     {
         name: "Base Apparel",
         description: "Uma landing page de vestuário feminino, com entrada de cadastro para lista de e-mails, feita em HTML e CSS.",
-        img: "imgs/base-apparel.png",
+        img: "imgs/Projetos/base-apparel.webp",
         url: "https://valerio-figueira.github.io/base-apparel-page/"
+    },
+    {
+        name: "IPMA",
+        description: "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.",
+        img: "imgs/Projetos/IPMA.webp",
+        url: "https://www.ipmamonte.mg.gov.br/"
     },
     {
         name: "Four Cards",
         description: "Uma simples página web feita com HTML e CSS. Alinhamento dos cartões feito com gridlayout.",
-        img: "imgs/four-cards-page.png",
+        img: "imgs/Projetos/four-cards-page.webp",
         url: "https://valerio-figueira.github.io/four-cards-page/"
     },
     {
         name: "Landing Page",
         description: "Huddle Landing Page é um projeto feito com HTML e CSS. Algumas propriedades de CSS utilizadas foram Grid Layout, Flex Box, @mediascreen (para deixá-lo responsivo), entre outras.",
-        img: "imgs/huddle-landing-page.png",
+        img: "imgs/Projetos/huddle.webp",
         url: "https://valerio-figueira.github.io/huddle-landing-page/"
-    },
-    {
-        name: "IPMA",
-        description: "Meu primeiro projeto real, feito para o Instituto de Previdência de minha cidade. O site é todo responsivo, adaptável a qualquer formato de tela. Feito com HTML, CSS e Javascript.",
-        img: "imgs/IPMA.png",
-        url: "https://www.ipmamonte.mg.gov.br/"
     },
     {
         name: "Subscription Page",
         description: "Esta é uma página de cadastro, com valor de venda do produto por mensalidade. Feita com HTML e CSS apenas. A página é responsiva, se adaptando muito bem a qualquer dispositivo.",
-        img: "imgs/subscription-page.png",
+        img: "imgs/Projetos/subscription-page.webp",
         url: "https://valerio-figueira.github.io/singlepage-subscription/"
-    },
-    {
-        name: "Ruby Project",
-        description: "Este é um dos meus projetos fictícios, no qual me empenhei por boas horas para me aprimorar como desenvolvedor web. Gostei muito de tê-lo feito, utilizei várias propriedades CSS de estilização e.g. absolute position, flex, grid, @mediascreen, efeito parallax, transition, etc.",
-        img: "imgs/ruby.png",
-        url: "https://valerio-figueira.github.io/ruby-project/"
     },
     {
         name: "Jasper Project",
         description: "Meu primeiro site feito com efeito parallax. É um site simples, mas com diversas propriedades avançadas de CSS. Há nele um navigator para mobiles e PCs desktop.",
-        img: "imgs/jasper.png",
+        img: "imgs/Projetos/jasper-project.webp",
         url: "https://valerio-figueira.github.io/jasper-project/"
     },
     {
         name: "Black Onyx",
         description: "Este modelo de site, com a propriedade grid, contém três colunas de artigos que, sendo visíveis para PCs desktop e outras telas, se ajustam a uma ou duas colunas conforme o dispositivo mobile.",
-        img: "imgs/black-onyx.png",
+        img: "imgs/Projetos/onyx-project.webp",
         url: "https://valerio-figueira.github.io/black-onyx-page/"
-    },
-    {
-        name: "Turmalina",
-        description: `Um simples modelo de site, o qual tentei fazer "imitando" o modelo de site da <a href="https://www.rocketseat.com.br/" target="_blank" rel="external">rocketseat</a>, do qual faço parte como estudante de programação.`,
-        img: "imgs/turmalina.png",
-        url: "https://valerio-figueira.github.io/turmalina-page/"
     },
     {
         name: "Lapis Lazuli",
         description: "Meu primeiro projeto web, o qual fiz com muita dedicação, aplicando todo conhecimento que obtive por meio de cursos e leituras, conquanto seja apenas um modelo fictício. Aprendi muito sobre estruturação de sites com este primeiro projeto.",
-        img: "imgs/lapis-lazuli.png",
+        img: "imgs/Projetos/lapis-lazuli.webp",
         url: "https://valerio-figueira.github.io/lapis-lazuli-page/"
     }
 ];
 
+/*Insert projects into section tag*/
+let startIndex = 0;
+let endIndex = 8;
+let indexPoint = 8;
 
+displayProjects(startIndex, endIndex);
 
-
-
-//THIS FUNCTION'LL CONTROL HOW NEXT/PREV BUTTONS LOOK IN THE PAGE
-function buttonController(start, end){
-    pullElement(".pages_controller").style.justifyContent = "space-between";
-    if(start === 0){
-        pullElement("#next_button").disabled = true;
-        pullElement("#prev_button").disabled = false;
-    } else if (end >= projects.length){
-        pullElement("#next_button").disabled = false;
-        pullElement("#prev_button").disabled = true;
-    } else {
-        pullElement("#next_button").disabled = false;
-        pullElement("#prev_button").disabled = false;        
-    }
-    return start, end;
-}
-
-
-
-
-let indexStart = 0;
-let indexEnd = 4;
-let indexPoint = 4;
-displayProjects(projects, indexStart, indexEnd);
-
-//THIS CLICK EVENT IS GOING TO CHANGE THE VIEW PAGES OF ARRAY
-pullElement("#next_button").addEventListener("click", () => displayProjects(projects, indexStart -= indexPoint, indexEnd -= indexPoint));
-pullElement("#prev_button").addEventListener("click", () => displayProjects(projects, indexStart += indexPoint, indexEnd += indexPoint));
-
-
-//DISPLAY THE PROJECTS IN THE PAGE
-function displayProjects(projects, start, end){
+function displayProjects(start, end){
     const portfolium = document.querySelector(".portfolium");
-    const html = projects.slice(start, end).map((project) => {
+    const html = projects.slice(start, end).map(project => {
         return `
-        <article class="post project">
-            <a href="${project.url}" target="_blank" rel="external"><h2 class="project_title">${project.name}</h2></a>
-            <a href="${project.url}" target="_blank" rel="external" class="bg-shadow"><img src="${project.img}" alt="${project.name}" class="img-effect"></a>
-            <p class="description">${project.description}<a href="${project.url}" target="_blank" rel="external"> Saiba mais</a></p>
+        <article class="projects">
+            <a href="${project.url}" target="_blank">
+                <img src="${project.img}" alt="${project.name}">
+            </a>
+            <a href="${project.url}" target="_blank"><h3 class="name">${project.name}</h3></a>
+            <a href="${project.url}" target="blank" class="knowmore">Saiba mais <span class="fa fa-angle-double-right icon"></span></a>
         </article>
         `;
-    }).join('');
-
-    buttonController(start, end);
-
-    portfolium.innerHTML = `
-        <h2 class="portfolium-title">Meu Portfólio</h2>
-    `;
-    portfolium.innerHTML += html;
-
-    return indexStart = start, indexEnd = end;
-};
-
-
-
-
-
-/*About myself*/
-const intro = document.querySelector(".paragraph");
-intro.innerHTML = "Desenvolvedor web, frontend. Estudante de HTML, CSS, JavaScript e outras tecnologias. Além disso, tenho 8 meses de experiência com Java, o qual aprendi resolvendo diversas listas de exercícios para aprimoramento da lógica de programação.";
-
-
-
-
-
-/*INSERT URL IN CONTACT H2*/
-const contato = document.querySelector(".box h2");
-contato.style.cursor = "pointer";
-contato.addEventListener("click", function(){
-    window.open("./index.html", "_self");
-})
-
-
-/*Github LINK*/
-let github = pullElement(".about").lastElementChild;
-github.innerHTML += "Esses e outros projetos podem ser encontrados também em meu repositório remoto ";
-createAnchorWithAppend(github, "https://github.com/valerio-figueira/", "");
-github.firstElementChild.appendChild(document.createElement("span")).className = "fa fa-git-square icon";
-github.firstElementChild.innerHTML += "Github.";
-
+    }).join("");    
+    btnController(start, end);
+    portfolium.innerHTML = html;
+    return startIndex = start, endIndex = end;
+}
 
 /*
-INSERTING TEXT IN HEADERS
+NEXT/PREV BTNs CONTROLLER
 */
-pullElement(".main-title").innerHTML = "Valerio Figueira";
-pullElement(".subtitle").innerHTML = "Web Developer - Frontend";
-pullElement(".about").firstElementChild.innerHTML = "Sobre";
+const next = document.querySelector(".controller #next");
+const prev = document.querySelector(".controller #prev");
 
+next.addEventListener("click", () => displayProjects(startIndex -= indexPoint, endIndex -= indexPoint));
+prev.addEventListener("click", () => displayProjects(startIndex += indexPoint, endIndex += indexPoint));
 
-/*
-CREATING CONTACT INFO
-*/
-pullElement(".box").appendChild(createContactInfo(" (34) 99971-3607", "tel:+55(34)99971.3607", "fa fa-phone-square icon"));
-pullElement(".box").appendChild(createContactInfo(" j.valerio.figueira@gmail.com", "mailto:j.valerio.figueira@gmail.com", "fa fa-envelope icon"));
-pullElement(".box").appendChild(createContactInfo(" /valerio-figueira", "https://github.com/valerio-figueira", "fa fa-git-square icon"));
-pullElement(".box").appendChild(createContactInfo(" /valerio-figueira", "https://www.linkedin.com/in/valerio-figueira/", "fa fa-linkedin-square icon"));
-pullElement(".box").appendChild(createContactInfo(" Monte Alegre de Minas - MG", "#location", "fa fa-map-marker icon"));
-
-
-
-
-/*
-CREATING UNORDERED LIST
-*/
-let box = pullAllElements(".box")[1];
-box.appendChild(createHeader("h2", "Competências"));
-
-let list = document.createElement("ul");
-box.appendChild(list);
-createList(list, "HTML5");
-createList(list, "CSS3");
-createList(list, "Javascript");
-createList(list, "Java");
-createList(list, "CSS Flexbox");
-createList(list, "CSS Grid Layout");
-createList(list, "Linux");
-createList(list, "Hardware");
-createList(list, "Redes LAN-WAN");
-createList(list, "Rede de Computadores");
-
-
-
-
-/*
-FUNCTIONS
-*/
-function createAnchorWithAppend(text, url, description){
-    let link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "external");
-    link.innerHTML = description;
-    text.appendChild(link);
-    return text;
-}
-function createSimpleAnchor(url, description){
-    let link = document.createElement("a");
-    link.setAttribute("href", url);
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "external");
-    link.innerHTML = description;
-    return link;
-}
-function pullElement(id){
-    return document.querySelector(`${id}`);
-}
-function pullAllElements(id){
-    return document.querySelectorAll(`${id}`);
-}
-let pullElements = (id) => {
-    document.querySelectorAll(id);
-}
-function setAnchorAttributes(elements, url){
-    for(let element of elements){
-        element.setAttribute("href", url);
-        element.setAttribute("target", "_blank");
-        element.setAttribute("rel", "external");
+function btnController(start, end){
+    const next = document.querySelector(".controller #next");
+    const prev = document.querySelector(".controller #prev");
+    if(start === 0){
+        next.disabled = true;
+        prev.disabled = false;
+    } else if (end >= projects.length - 1){
+        prev.disabled = true;
+        next.disabled = false;
+    } else {
+        next.disabled = false;
+        prev.disabled = false;
     }
-    return elements;
 }
-function setImageAttributes(image, url, alt){
-    image.setAttribute("src", url);
-    image.setAttribute("alt", alt);
-    return image;
-}
-function createContactInfo(description, url, iconName){
-    let anchor = document.createElement("a");
-    let paragraph = document.createElement("p");
-    let icon = document.createElement("span");
 
-    icon.className = iconName;
-    anchor.setAttribute("href", url);
-    anchor.setAttribute("target", "_blank");
-    anchor.setAttribute("rel", "external");  
-    
-    anchor.appendChild(paragraph);
-    paragraph.appendChild(icon);
-    paragraph.innerHTML += description;
+
+
+
+
+/*
+FADE IN ANIMATION ON SCROLL
+*/
+const reveal = document.querySelectorAll(".reveal");
+const callback = function(entries){
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("inview");
+        } else{
+            entry.target.classList.remove("inview");
+        }
+    });
+}
+const io = new IntersectionObserver(callback);
+for(let view of reveal){
+    io.observe(view);
+}
+
+
+const social = document.querySelector('footer .social');
+
+social.appendChild(createSocialAnchors('mailto:j.valerio.figueira@gmail.com', 'fa fa-envelope'));
+social.appendChild(createSocialAnchors('https://www.linkedin.com/in/valerio-figueira/', 'fa fa-linkedin-square'));
+social.appendChild(createSocialAnchors('https://github.com/valerio-figueira', 'fa fa-github'));
+social.appendChild(createSocialAnchors('https://www.instagram.com/valerio.figueira/', 'fa fa-instagram'));
+social.appendChild(createSocialAnchors('https://www.facebook.com/jvaleriofigueira/', 'fa fa-facebook-official'));
+
+function createSocialAnchors(url, iconClass){
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.target = "_blank";
+    anchor.className = iconClass;
     return anchor;
 }
-function createHeader(type, text){
-    let h2 = document.createElement(type);
-    h2.innerHTML = text;
-    return h2;
-}
-function createList(list, description){
-    let li = document.createElement("li")
-    list.appendChild(li);
-    return li.innerHTML = description;
-}
 
 
 
+const copyright = document.querySelector(".copyright");
+const year = new Date().getFullYear();
+copyright.innerHTML = `Direitos Autorais - \u00A9 ${year}`;
 
 
-/*Mobile button to open vertical bar*/
-const mobile = document.querySelector(".mobile");
-const perfil = document.querySelector(".perfil");
-const icon = document.querySelector(".close-icon");
 
-mobile.addEventListener("click", function(){
-    if(perfil.className === "perfil"){
-        perfil.classList.add("open");
-    } else{
-        perfil.classList.remove("open");
+let myAge = year - 1994;
+const actualMonth = new Date().getMonth() + 1;
+actualMonth < 12 ? --myAge : myAge;
+document.querySelector('.age').innerHTML = 'Idade: ' + myAge;
+
+
+// NAVBAR
+const navbar = document.querySelector('.nav_links');
+const closeNav = document.querySelector('.nav_links .close-nav')
+document.querySelector('.mobile-icon')
+.addEventListener('click', () => {
+    if(!navbar.matches('.responsive')){
+        navbar.classList.add('responsive');
+        closeNav.addEventListener('click', () => {
+            navbar.classList.remove('responsive');
+        });
+    }else{
+        navbar.classList.remove('responsive');
     }
 })
 
-/*CLOSE BUTTON OF SIDE-COLUMN*/
-icon.addEventListener("click", function(){
-    perfil.className = "perfil";
-})
-
-
-
-/*COPYRIGHT DATE*/
-const copyright = document.querySelector(".copyright");
-const year = new Date().getFullYear();
-
-copyright.textContent = `\u00A9 Direitos Autorais - ${year}`;
+document.querySelector('footer .up-btn')
+.addEventListener('click', () => {
+    window.open('#home', '_self');
+});

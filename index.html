@@ -12,12 +12,12 @@
     <script src="./js/index.js" defer></script>
 </head>
 <body class="grid">
-    <header class="h_flex background-img" id="home">
-        <nav class="navbar flex_nav">
+    <header class="header-container background-img" id="home">
+        <nav class="navbar">
             <a href="./index.html">
                 <h2>D<span>eveloper</span></h2>
             </a>
-            <div class="nav_links">
+            <div class="links-container">
                 <a href="./index.html">Home</a>
                 <a href="#about">Sobre</a>
                 <a href="#services">Serviços</a>
@@ -28,7 +28,7 @@
             <button class="fa fa-bars mobile-icon"></button>
         </nav>
 
-        <div class="box">
+        <div class="box avatar-container">
             <div class="inner-shadow"><img src="imgs/myself-round.webp" alt="avatar"></div>
             <h1>Valerio</h1>
             <p>Student & Web Developer - Frontend</p>
@@ -43,14 +43,14 @@
                 <p>Olá! Sou estudante de tecnologias web e desenvolvedor frontend. Faço projetos com Javascript, React, HTML e CSS.</p>
                 <div class="colored_border flex_list box">
                     <ul>
-                        <li>Nome: Valerio Figueira</li>
-                        <li>Tel: <a href="tel:+55(34)99971.3607">34 99971-3607</a></li>
-                        <li>Experiência: Em busca dela</li>
+                        <li><span>Nome:</span> Valerio Figueira</li>
+                        <li><span>Tel:</span> <a href="tel:+55(34)99971.3607">34 99971-3607</a></li>
+                        <li><span>Experiência:</span> Em busca dela</li>
                     </ul>
                     <ul>
                         <li class="age"></li>
-                        <li>End.: Monte Alegre de Minas, MG</li>
-                        <li>Freelance: Disponível</li>
+                        <li><span>End.:</span> Monte Alegre de Minas, MG</li>
+                        <li><span>Freelance:</span> Disponível</li>
                     </ul>
                 </div>
             </article>
@@ -59,14 +59,14 @@
             <article id="services">
                 <h2><span class="border_bottom">Serviços</span></h2>
                 <div class="box colored_border">
-                    <h3>Javascript & Git</h3>
-                    <p>Meus projetos web são feitos em Javascript (ES6). Páginas dinâmicas, utilização de API, manipulação DOM, programação funcional, entre outros detalhes.</p>
-                    <p>Além disso, faço uso do github para versionamento dos projetos.</p>
+                    <h3>Javascript & NodeJS</h3>
+                    <p>Meus projetos web são feitos em Javascript (ES6+). Páginas dinâmicas, requisições assíncronas, manipulação DOM, programação funcional, etc.</p>
+                    <p>Atualmente tenho me dedicado à construção de aplicações utilizando o framework Express, do NodeJS.</p>
                 </div>
                 <div class="box colored_border">
                     <h3>HTML & CSS</h3>
-                    <p>Algumas propriedades de estilização utilizadas: Flexbox, GridLayout, Absolute position, Float, MediaQueries, Animation, etc.</p>
-                    <p>Minhas principais bases de HTML e CSS provém dos cursos do professor <a href="https://www.cursoemvideo.com/" target="_blank" rel="external">Guanabara</a>.</p>
+                    <p>Algumas propriedades CSS com as quais tenho boa prática e estudo: Flexbox, Grid, Absolute position, Float, MediaQueries, Animation, etc.</p>
+                    <p>Minha principal base de HTML e CSS provém dos cursos do professor <a href="https://www.cursoemvideo.com/" target="_blank" rel="external">Guanabara</a>. Além disso, muita dedicação, exercícios e disciplina.</p>
                 </div>
                 <div class="box colored_border">
                     <h3>Competências</h3>
@@ -75,8 +75,10 @@
                         <li>Java</li>
                         <li>Github</li>
                         <li>React / NPM</li>
+                        <li>NodeJS</li>
                         <li>HTML & CSS</li>
                         <li>Linux</li>
+                        <li>Command Line Interface (CLI)</li>
                     </ul>
                 </div>
             </article>
@@ -87,6 +89,7 @@
                 <p>Todos os meus projetos, publicados aqui em meu portfólio, foram feitos seguindo a minha linha de evolução e aprendizado. Inclusive a publicação deste portfólio.</p>
             </article>
             <section class="portfolium" id="portfolium"></section>
+            <div class="loader"></div>
             <div class="controller">
                 <button class="fa fa-angle-double-left" id="next"></button>
                 <button class="fa fa-angle-double-right" id="prev"></button>

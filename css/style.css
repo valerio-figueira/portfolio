@@ -16,6 +16,24 @@
 html{
     scroll-behavior: smooth;
 }
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+  /* Track */
+::-webkit-scrollbar-track {
+    background: var(--color6); 
+}
+   
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--color2); 
+}
+  
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color1); 
+}
 
 *{
     box-sizing: border-box;
@@ -37,7 +55,9 @@ body{
 p{
     line-height: 1.5rem;
 }
-
+h3:hover{
+    transform: translateY(-.1rem);
+}
 a{
     color: var(--color3);
     font-weight: bolder;
@@ -46,6 +66,48 @@ a{
 }
 a:hover{
     color: var(--color1);
+}
+
+#js:hover{color: yellow; animation: lettersEntry 1s linear 0s;}
+#java:hover{color: sandybrown; animation: lettersEntry 1.5s linear 0s;} 
+#github:hover{color: tomato; animation: lettersEntry 2s linear 0s;} 
+#react:hover{color: deepskyblue; animation: lettersEntry 2.5s linear 0s;} 
+#npm{color: #d1d1d1; animation: lettersEntry 3s linear 0s;}
+#react:hover #npm{color: #e4514f;}
+#nodejs:hover{color: greenyellow;}
+#html:hover{color: #e4514f;}
+#css{color:#d1d1d1}
+#html:hover #css{color: mediumpurple}
+#linux:hover{color: springgreen;}
+#cli:hover{color: lightgreen;}
+
+.inview #js{animation: lettersEntry .8s linear 0s;}
+.inview #java{animation: lettersEntry 1s linear 0s;} 
+.inview #github{animation: lettersEntry 1.2s linear 0s;} 
+.inview #react{animation: lettersEntry 1.4s linear 0s;}
+.inview #nodejs{animation: lettersEntry 1.6s linear 0s;}
+.inview #html{animation: lettersEntry 1.7s linear 0s;}
+.inview #linux{animation: lettersEntry 1.8s linear 0s;}
+.inview #cli{animation: lettersEntry 1.9s linear 0s;}
+
+.abilities{
+    text-shadow: 1px 1px 5px black;
+}
+.abilities li{
+    margin: 0; padding: .3rem 0;
+}
+.abilities li:hover{
+    transform: translateX(1rem);
+}
+
+@keyframes lettersEntry {
+    from{
+        opacity: 0;
+        transform: translateX(5rem);
+    } to{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
 }
 
 /*HEADER CONFIG*/
@@ -131,7 +193,7 @@ a:hover{
     border-radius: 50%;
     filter: grayscale(0.2);
     margin: -3px;
-    transition: 0.5s;
+    transition: animation .5s linear;
     border: 3px solid transparent;
 }
 .header-container .box img:hover{
@@ -202,14 +264,14 @@ a:hover{
     overflow: hidden;
     background-color: var(--color2);
     padding: 70px 80px;
-    transition: 0.5s;    
+    transition: 0.5s;
 }
 .content .section-01 article img{
     float: left;
     width: 32%;
     margin-right: 30px;
     filter: grayscale(0);
-    transition: 0.5s;
+    transition: animation 0.5s linear;
     border: 3px solid transparent;
     background: #1c1c1c;
 }
@@ -217,8 +279,9 @@ a:hover{
     background-color: #000000;
     box-shadow: inset 0px 0px 30px 1px #000000, 0px 0px 10px 0px #00000047;
 }
+
 .content .section-01 article img:hover{
-    filter: grayscale(0);  
+    filter: grayscale(0);
     animation-name: twink;
     animation-duration: 1s;
     animation-delay: 0s;
@@ -228,6 +291,7 @@ a:hover{
     transition: 0.5s linear;
 }
 .content .section-01 article h2{    
+    color: var(--color3);
     font-weight: bolder;
     font-size: 30px;
 }
@@ -249,6 +313,47 @@ a:hover{
 .content .section-01 article .destaque{
     font-weight: bold;
     color: var(--color1);
+}
+
+/*
+WHEN INVIEW
+*/
+.content .section-01.reveal article img{
+    transform: translateX(-5rem);
+    opacity: 0;
+    transition: transform 2s linear, opacity 2s linear;
+}
+.content .section-01.inview article img{
+    opacity: 1;
+    transform: translateX(0);
+}
+.content .section-01.inview article .box{
+    animation: translateFromBottom 1.3s linear 0s;
+}
+.content .section-01.inview article h2{
+    animation: lettersEntry 1.2s linear 0s;
+}
+.content .section-01.inview article p{
+    animation: lettersEntry 1.5s linear 0s;
+}
+
+@keyframes translateFromLeft {
+    from{
+        opacity: 0;
+        transform: translateX(-3rem);
+    } to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+@keyframes translateFromBottom {
+    from{
+        opacity: 0;
+        transform: translateY(3rem);
+    } to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 
@@ -310,11 +415,26 @@ a:hover{
 .content .section-02 article .box:hover{
     border: 2px solid #ae2725;
 }
+.content .section-02.inview article h3{
+    color: var(--color3);
+}
 .box p{
     color: var(--color5);
-    padding: 15px 0 10px;    
+    padding: 15px 0 10px;
+}
+.section-02.inview article p, .section-02.inview article h3{
+    animation: slideBox 1s linear 0s;
 }
 
+@keyframes slideBox {
+    from{
+        opacity: 0;
+        transform: translateX(2rem);
+    } to {
+        opacity: 1;
+        transform: translateX(0rem);
+    }
+}
 
 
 
@@ -350,11 +470,11 @@ a:hover{
     width: 32%;
     margin-right: 30px;
     filter: grayscale(0.3);
-    transition: 0.5s;
+    transition: animation 0.5s linear;
     border: 3px solid transparent;
 }
-.content .section-03 article img:hover{
-    filter: grayscale(0);  
+.content .section-03 article:hover img{
+    filter: grayscale(0);
     animation-name: twink;
     animation-duration: 1s;
     animation-delay: 0s;
@@ -366,6 +486,7 @@ a:hover{
 .content .section-03 article h2{    
     font-weight: bolder;
     font-size: 30px;
+    color: var(--color3);
 }
 .content .section-03 article .view-word{
     position: relative;
@@ -381,6 +502,12 @@ a:hover{
 .content .section-03 article p{
     margin: 20px 0;
     color: var(--color5);
+}
+.content .section-03.inview article h2{
+    animation: translateFromLeft 1.5s linear 0s;
+}
+.content .section-03.inview article p{
+    animation: lettersEntry 2s linear 0s;
 }
 .content .section-03 article .destaque{
     font-weight: bold;
@@ -407,10 +534,11 @@ a:hover{
     box-shadow: 0px 0px 10px 0px #00000075;
 }
 .content .portfolium .projects h3{
-    padding: 10px 0 5px;
+    margin: 1.2rem 0 .7rem;
+    padding: 5px 0 5px;
 }
 .content .portfolium .projects .knowmore{
-    font-size: 13px;
+    font-size: 1rem;
     color: var(--color1);
     padding: 0;
     transition: 0.5s;
@@ -421,8 +549,9 @@ a:hover{
 }
 .content .portfolium .projects .knowmore .icon{
     position: absolute;
-    top: -1px;
-    font-size: 16px;
+    top: 1px;
+    right: -1rem;
+    font-size: 1.1rem;
     transition: 0.5s;
 }
 .content .portfolium .projects .knowmore:hover .icon{
@@ -442,10 +571,12 @@ a:hover{
     flex-direction: row;
 
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+    scroll-snap-type: x proximity;
+    scroll-snap-stop: always;
     scroll-behavior: smooth;
-    scrollbar-width: none;
+    transition: overflow-x .5s linear;
 }
+
 .portfolium .projects .images a{
     scroll-snap-align: start;
     flex-shrink: 0;
@@ -531,7 +662,7 @@ a:hover{
     border: 2px solid var(--color1);
     border-radius: 6px;
     padding: 10px;
-    transition: all 0.5s;
+    transition: animation 0.5s ease;
 }
 .colored_border:hover{
     border: 2px solid #ae2725;
@@ -540,6 +671,7 @@ a:hover{
     animation-delay: 0s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 .colored_border ul{
     display: block;
@@ -888,6 +1020,12 @@ footer .up-btn:hover{
 @media screen and (max-width: 625px) {
     ul li{
         font-size: 16px;
+    }
+    .reveal{
+        position: relative;
+        transform: scale(0.85);
+        opacity: 0;
+        transition: all 2s;
     }
 }
 @media screen and (max-width: 600px) {

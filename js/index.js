@@ -1,4 +1,5 @@
 const URL = "https://portfolium-api.netlify.app/projects";
+// https://portfolium-api.netlify.app/projects
 
 
 async function fetchAPI() {

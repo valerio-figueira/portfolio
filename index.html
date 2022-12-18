@@ -40,14 +40,14 @@
             <article id="about">
                 <img src="imgs/Myself.webp" alt="avatar">
                 <h2><span class="border_bottom view-word">Sobre</span></h2>
-                <p>Olá! Sou estudante de tecnologias web e desenvolvedor frontend. Faço projetos com Javascript, React, HTML e CSS.</p>
-                <div class="colored_border flex_list box">
-                    <ul>
+                <p>Olá! Sou estudante de tecnologias web e desenvolvedor frontend. Faço projetos com Javascript, React, HTML e CSS. Iniciei esta nova jornada de programador em Outubro de 2021, com a linguagem Java, aprendendo lógica de programação. Logo após alguns meses de treino resolvi expandir meus conhecimentos para desenvolvimento web. E cá estou, devagar e sempre, evoluindo de pouco a pouco a cada dia. ✨</p>
+                <div class="colored-box list-container">
+                    <ul id="list-1">
                         <li><span>Nome:</span> Valerio Figueira</li>
                         <li><span>Tel:</span> <a href="tel:+55(34)99971.3607">34 99971-3607</a></li>
-                        <li><span>Experiência:</span> Em busca dela</li>
+                        <li><span>Experiência:</span> Em busca dela (rs)</li>
                     </ul>
-                    <ul>
+                    <ul id="list-2">
                         <li class="age"></li>
                         <li><span>End.:</span> Monte Alegre de Minas, MG</li>
                         <li><span>Freelance:</span> Disponível</li>
@@ -58,25 +58,26 @@
         <section class="section-02 reveal">
             <article id="services">
                 <h2><span class="border_bottom">Serviços</span></h2>
-                <div class="box colored_border">
+                <div class="box colored-box">
                     <h3>Javascript & NodeJS</h3>
                     <p>Meus projetos web são feitos em Javascript (ES6+). Páginas dinâmicas, requisições assíncronas, manipulação DOM, programação funcional, etc.</p>
                     <p>Atualmente tenho me dedicado à construção de aplicações utilizando o framework Express, do NodeJS.</p>
                 </div>
-                <div class="box colored_border">
+                <div class="box colored-box">
                     <h3>HTML & CSS</h3>
                     <p>Algumas propriedades CSS com as quais tenho boa prática e estudo: Flexbox, Grid, Absolute position, Float, MediaQueries, Animation, etc.</p>
                     <p>Minha principal base de HTML e CSS provém dos cursos do professor <a href="https://www.cursoemvideo.com/" target="_blank" rel="external">Guanabara</a>. Além disso, muita dedicação, exercícios e disciplina.</p>
                 </div>
-                <div class="box colored_border">
-                    <h3>Competências</h3>
+                <div class="box colored-box">
+                    <h3>Competências 🧙🏻‍♂️</h3>
                     <ul class="abilities">
-                        <li id="js">Javascript</li>
+                        <li id="javascript">Javascript</li>
                         <li id="java">Java</li>
                         <li id="github">Github</li>
-                        <li id="react">React / <span id="npm">NPM</span></li>
+                        <li id="react">React</li>
                         <li id="nodejs">NodeJS</li>
                         <li id="html">HTML & <span id="css">CSS</span></li>
+                        <li id="npm">NPM</li>
                         <li id="linux">Linux</li>
                         <li id="cli">Command Line Interface</li>
                     </ul>
@@ -96,6 +97,12 @@
             </div>
         </section>
     </main>
+
+    <div class="popup">
+        <button class="close-popup">&times;</button>
+        <div class="popup-content"></div>
+        <div class="loader popup"></div>
+    </div>
 
     <footer class="section-04 reveal" id="contact">        
         <div class="social"></div>

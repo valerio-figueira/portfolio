@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Archivo+Black&family=Prompt:wght@900&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap');
+
 :root{
     --color1: #e4514f;
     --color2: #1f2233;
@@ -10,7 +12,7 @@
     --color7: #353b56;
     --color8: #56bd97;
     --color9: #ae2725;
-    --mobile: 370px;
+    --mobile: 360px;
 }
 
 html{
@@ -42,7 +44,7 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     background-color: #1c1c1c;
     color: white;
 
@@ -68,12 +70,12 @@ a:hover{
     color: var(--color1);
 }
 
-#js:hover{color: yellow; animation: lettersEntry 1s linear 0s;}
-#java:hover{color: sandybrown; animation: lettersEntry 1.5s linear 0s;} 
-#github:hover{color: tomato; animation: lettersEntry 2s linear 0s;} 
-#react:hover{color: deepskyblue; animation: lettersEntry 2.5s linear 0s;} 
-#npm{color: #d1d1d1; animation: lettersEntry 3s linear 0s;}
-#react:hover #npm{color: #e4514f;}
+#javascript:hover{color: yellow;}
+#java:hover{color: sandybrown;} 
+#github:hover{color: tomato;} 
+#react:hover{color: deepskyblue;} 
+#npm{color: #d1d1d1;}
+#npm:hover{color: #e4514f;}
 #nodejs:hover{color: greenyellow;}
 #html:hover{color: #e4514f;}
 #css{color:#d1d1d1}
@@ -81,12 +83,13 @@ a:hover{
 #linux:hover{color: springgreen;}
 #cli:hover{color: lightgreen;}
 
-.inview #js{animation: lettersEntry .8s linear 0s;}
+.inview #javascript{animation: lettersEntry .8s linear 0s;}
 .inview #java{animation: lettersEntry 1s linear 0s;} 
 .inview #github{animation: lettersEntry 1.2s linear 0s;} 
 .inview #react{animation: lettersEntry 1.4s linear 0s;}
 .inview #nodejs{animation: lettersEntry 1.6s linear 0s;}
 .inview #html{animation: lettersEntry 1.7s linear 0s;}
+.inview #npm{animation: lettersEntry 1.7s linear 0s;}
 .inview #linux{animation: lettersEntry 1.8s linear 0s;}
 .inview #cli{animation: lettersEntry 1.9s linear 0s;}
 
@@ -94,7 +97,9 @@ a:hover{
     text-shadow: 1px 1px 5px black;
 }
 .abilities li{
+    cursor: pointer;
     margin: 0; padding: .3rem 0;
+    text-decoration: underline;
 }
 .abilities li:hover{
     transform: translateX(1rem);
@@ -307,7 +312,7 @@ a:hover{
     left: 0;
 }
 .content .section-01 article p{
-    margin: 10px;
+    margin: 1rem 10px;
     color: var(--color5);
 }
 .content .section-01 article .destaque{
@@ -657,14 +662,14 @@ WHEN INVIEW
     cursor: default;
 }
 
-.colored_border{
+.colored-box{
     display: inline-block;
     border: 2px solid var(--color1);
     border-radius: 6px;
     padding: 10px;
     transition: animation 0.5s ease;
 }
-.colored_border:hover{
+.colored-box:hover{
     border: 2px solid #ae2725;
     animation-name: AnimatedBorder;
     animation-duration: 1.5s;
@@ -673,24 +678,29 @@ WHEN INVIEW
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
-.colored_border ul{
+.colored-box ul{
     display: block;
     list-style: none;
     padding: 10px;
 }
-.colored_border ul a{
+.colored-box ul a{
     color: #d1d1d1;
     font-weight: normal;
     text-decoration: underline;
 }
-.colored_border ul a:hover{
+.colored-box ul a:hover{
     color: #67e3b6;
 }
-.flex_list{
+.list-container{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    padding: .5rem; margin: 0;
 }
+.list-container #list-1, .list-container #list-2{
+    padding: 0 .5rem;
+}
+
 ul li{
     color: var(--color5);
     margin: 10px 0;
@@ -796,7 +806,7 @@ footer .up-btn:hover{
 
 .avatar-container{
     animation-name: translateItem;
-    animation-duration: 1s;
+    animation-duration: 2s;
     animation-delay: 0s;
     animation-iteration-count: initial;
 }
@@ -891,6 +901,8 @@ footer .up-btn:hover{
 
 
 .loader{
+    display: none;
+
     animation-name: loadingSpinner;
     animation-delay: 0s;
     animation-duration: .7s;
@@ -907,16 +919,142 @@ footer .up-btn:hover{
 }
 
 
-.colored_border span{
+.colored-box span{
     color: #e4514f;
 }
 
+/*POPUP*/
+body{
+    position: relative;
+}
+.popup.open{
+    opacity: 1;
+    transform: translateY(0);
+}
+.popup{
+    position: fixed;
+    z-index: 1000;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: #000000cd;
+    transition: transform .5s linear, opacity 0s;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    overflow-y: scroll;
+    
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.popup .popup-content{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 0rem;
+    max-width: 700px;
+    max-height: 650px;
+    min-height: 500px;
+}
+.popup .popup-content .title-container{
+    grid-row: 2;
+    grid-column: 1/4;
+    font-size: 1.2rem;
+}
+.popup .popup-content .title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup .popup-content .title-container *{
+    margin: 0 1rem;
+}
+.popup .popup-content .warning{
+    grid-row: 1;
+    grid-column: 1/4;
+
+    font-size: 1.3rem;
+    padding: .5rem 0 1.5rem;
+
+    display: block;
+    margin: auto;
+
+    color: #ffffff86;
+
+    animation-name: shine;
+    animation-duration: .7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.popup .popup-content img{
+    width: 80px;
+}
+.popup .popup-content .paragraphs{
+    grid-row: 3;
+    grid-column: 1/4;
+
+    padding: 1rem 1.5rem;
+}
+.popup .popup-content .paragraph{
+    font-size: 1.3rem;
+    line-height: 2.2rem;
+    margin: 1rem 0;
+}
+.popup .popup-content .references{
+    grid-row: 4;
+    grid-column: 1/4;
+
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+
+    padding: 0 1.5rem;
+}
+.popup .popup-content .date{
+    grid-row: 5;
+    grid-column: 1/4;
+
+    padding: 1.5rem;
+
+    font-size: 1.2rem;
+    color: var(--color1);
+}
+@keyframes shine {
+    from{
+        opacity: 1;
+    } to {
+        opacity: .2;
+    }
+}
+
+.close-popup{
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 3rem;
+    z-index: 1001;
+    color: #d1d1d1;
+
+    background: transparent;
+    border: none;
+    font-size: 5rem;
+
+    cursor: pointer;
+}
+.close-popup:hover{
+    color: var(--color1);
+}
+
+
+
 /*RESPONSIVE LAYOUT*/
 @media screen and (max-width: 880px) {
-    .colored_border ul{
-        padding: 0;
+    .colored-box ul{
+        padding: 1rem 0;
     }
-    .colored_border ul:nth-of-type(1){
+    .colored-box ul:nth-of-type(1){
         padding-right: .5rem;
     }
     #about img{
@@ -939,7 +1077,14 @@ footer .up-btn:hover{
         background-position: center;
     }
 
-
+    /*POPUP FONTSIZE*/
+    .popup .popup-content .paragraph{
+        font-size: 1.2rem;
+    }
+    .close-popup{
+        right: .5rem; padding: 0;
+        font-size: 4rem;
+    }
 
     .content .section-01 article{
         padding: 70px 20px 70px 20px;
@@ -1018,6 +1163,9 @@ footer .up-btn:hover{
     }
 }
 @media screen and (max-width: 625px) {
+    .list *{
+        padding: 0; margin: 0;
+    }
     ul li{
         font-size: 16px;
     }
@@ -1044,7 +1192,7 @@ footer .up-btn:hover{
 @media screen and (max-width: 540px) {
     .content .section-01 article img{
         margin-top: -1rem;
-        margin-bottom: 1rem;
+        margin-bottom: .3rem;
     }
 }
 @media screen and (max-width: 500px) {
@@ -1054,18 +1202,14 @@ footer .up-btn:hover{
     .content .section-01::after{
         top: .5rem;
     }
-    .content .section-01 article .flex_list{
-        margin-top: 40px;
-    }
     .content .section-01 article p{
         text-align: justify;
         font-size: .9rem;
     }
 
-    .flex_list{
+    .list-container{
         clear: both;
         flex-direction: column;
-        margin: 0 2rem;
     }
     ul li{
         padding: 0; margin: .5rem 0;

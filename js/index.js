@@ -112,7 +112,9 @@ const callback = function(entries){
         if(entry.isIntersecting){
             entry.target.classList.add("inview");
             if(entry.target.matches(".section-03")){
-                displayProjects(startIndex, endIndex);
+                if(!document.querySelector(".projects")){
+                    displayProjects(startIndex, endIndex);
+                }
             }
         } else{
             entry.target.classList.remove("inview");

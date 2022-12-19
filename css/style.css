@@ -954,6 +954,7 @@ body{
 
     padding: 0rem;
     max-width: 700px;
+    min-width: 360px;
     max-height: 650px;
     min-height: 500px;
 }

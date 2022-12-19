@@ -22,7 +22,7 @@ let startIndex = 0;
 let endIndex = 8;
 let indexPoint = 8;
 
-displayProjects(startIndex, endIndex);
+
 
 async function displayProjects(start, end){
     const portfolium = document.querySelector(".portfolium");
@@ -111,6 +111,9 @@ const callback = function(entries){
     entries.forEach(entry => {
         if(entry.isIntersecting){
             entry.target.classList.add("inview");
+            if(entry.target.matches(".section-03")){
+                displayProjects(startIndex, endIndex);
+            }
         } else{
             entry.target.classList.remove("inview");
         }
@@ -188,7 +191,7 @@ document.querySelector('.close-popup')
     getConditional(e.target.parentNode);
 })
 
-// IF ESC IS PRESSED
+// IF ESC IS PRESSED SO CLOSE POPUP
 document.addEventListener("keydown", (e) => {
     if(e.key.match("Escape")){
         getConditional(document.querySelector(".popup"));

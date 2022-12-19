@@ -1,5 +1,5 @@
-const URL = "";
-// https://portfolium-api.netlify.app/projects
+const URL = "https://portfolium-api.netlify.app/projects";
+
 
 async function fetchAPI(URL) {
     const loader = document.querySelector(".loader");
@@ -201,7 +201,7 @@ async function openPopup(element){
     getConditional(popup);
 
     // async function and search conditionals
-    const technologies = await fetchTechnologies(`http://localhost:8888/technologies/tag/${element.id}`);
+    const technologies = await fetchTechnologies(`https://portfolium-api.netlify.app/technologies/tag/${element.id}`);
 
     if(technologies != undefined){
         createElements(technologies);

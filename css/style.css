@@ -918,6 +918,15 @@ footer .up-btn:hover{
     border-bottom: 5px solid #67e3b6;
 }
 
+body{
+    position: relative;
+}
+#popup-spinner{
+    position: absolute;
+    top: 45%; left: 0; right: 0; bottom: 0;
+    z-index: 1010;
+    transform: translateY(-50%);
+}
 
 .colored-box span{
     color: #e4514f;

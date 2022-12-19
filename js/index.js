@@ -230,7 +230,7 @@ function getConditional(element){
 }
 
 async function fetchTechnologies(URL){
-    const spinner = document.querySelector('.loader.popup');
+    const spinner = document.querySelector('#popup-spinner');
     spinner.style.display = "block";
 
     return await fetch(URL)

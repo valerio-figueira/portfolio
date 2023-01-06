@@ -13,6 +13,7 @@
     --color8: #56bd97;
     --color9: #ae2725;
     --mobile: 360px;
+    --h2-desktop-font-size: 
 }
 
 html{
@@ -56,7 +57,7 @@ body{
 
 p{
     font-size: 1.2rem;
-    line-height: 1.5rem;
+    line-height: 2rem;
 }
 li{
     font-size: 1.2rem;
@@ -73,6 +74,18 @@ a{
 a:hover{
     color: var(--color1);
 }
+
+section.section-01, section.section-02, section.section-03, section.section-04{
+    padding: 0 10%;
+}
+
+article h2{
+    color: var(--color3);
+    font-weight: bolder;
+    font-size: 2.5rem;
+}
+
+
 
 #javascript:hover{color: yellow;}
 #java:hover{color: sandybrown;} 
@@ -138,6 +151,7 @@ a:hover{
 .header-container{
     display: flex;
     flex-direction: column;
+    height: 100vh;
 }
 .navbar{
     display: flex;
@@ -156,8 +170,14 @@ a:hover{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 1.5rem;
     flex-basis: auto;
+}
+.navbar .links-container a{
+    font-size: 1.2rem;
+}
+.navbar .links-container a:hover{
+    transform: scale(1.2);
 }
 .navbar .mobile-icon{
     background: transparent;
@@ -198,7 +218,7 @@ a:hover{
     position: relative;
     display: block;    
     z-index: -1;
-    width: 150px;
+    width: 200px;
     border-radius: 50%;
     filter: grayscale(0.2);
     margin: -3px;
@@ -221,7 +241,7 @@ a:hover{
 
 .header-container .box h1{
     font-family: 'Prompt', sans-serif;
-    font-size: 38px;
+    font-size: 4rem;
     color: var(--color1);
 }
 .header-container .box h1::before{
@@ -233,9 +253,13 @@ a:hover{
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
+.header-container .avatar-container h1{
+    margin-top: 1.5rem;
+}
+
 .navbar h2{
     font-family: 'Prompt', sans-serif;
-    font-size: 30px;
+    font-size: 2.5rem;
 }
 .navbar h2 span{
     color: var(--color1);
@@ -249,6 +273,7 @@ a:hover{
 
 .content .section-01{
     position: relative;
+    background-color: var(--color2);
 }
 .content .section-01::before{
     content: "01";
@@ -271,7 +296,6 @@ a:hover{
 }
 .content .section-01 article{
     overflow: hidden;
-    background-color: var(--color2);
     padding: 70px 80px;
     transition: 0.5s;
 }
@@ -299,11 +323,6 @@ a:hover{
     animation-timing-function: linear;
     transition: 0.5s linear;
 }
-.content .section-01 article h2{    
-    color: var(--color3);
-    font-weight: bolder;
-    font-size: 30px;
-}
 .content .section-01 article .view-word{
     position: relative;
 }
@@ -316,7 +335,7 @@ a:hover{
     left: 0;
 }
 .content .section-01 article p{
-    margin: 1rem 10px;
+    margin: 2rem 10px;
     color: var(--color5);
 }
 .content .section-01 article .destaque{
@@ -400,7 +419,6 @@ WHEN INVIEW
     padding: 60px;
 }
 .content .section-02 article h2{
-    color: var(--color3);
     margin-left: 10px;
     grid-area: header;
 }
@@ -425,6 +443,7 @@ WHEN INVIEW
     border: 2px solid #ae2725;
 }
 .content .section-02.inview article h3{
+    font-size: 1.5rem;
     color: var(--color3);
 }
 .box p{
@@ -492,11 +511,6 @@ WHEN INVIEW
     animation-timing-function: linear;
     transition: 0.5s linear;
 }
-.content .section-03 article h2{    
-    font-weight: bolder;
-    font-size: 30px;
-    color: var(--color3);
-}
 .content .section-03 article .view-word{
     position: relative;
 }
@@ -529,7 +543,7 @@ WHEN INVIEW
 .content .portfolium{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    padding: 0px 73px 30px;
+    padding: 0px 73px 70px;
     background-color: var(--color2);
 }
 .content .portfolium .projects{
@@ -623,16 +637,16 @@ WHEN INVIEW
 
 
 /*NEXT & PREV BUTTONS*/
-.section-03{
+html body main .section-03{
     padding: 50px 0;
     background-color: var(--color2);
 }
-.section-03 .controller #prev{
+.section-03 .controller #prev, .section-03 .controller #next{
     display: inline;
     position: absolute;
     bottom: 30px;
     right: 30%;
-    font-size: 23px;
+    font-size: 1.7rem;
     cursor: pointer;
     border: none;
     background-color: transparent;
@@ -642,17 +656,11 @@ WHEN INVIEW
 .section-03 .controller #prev:hover{
     color: var(--color1);
 }
+.section-03 .controller #prev{
+    right: 35%;
+}
 .section-03 .controller #next{
-    display: block;
-    position: absolute;
-    bottom: 30px;
-    left: 30%;
-    font-size: 23px;
-    cursor: pointer;
-    border: none;
-    background-color: transparent;
-    color: var(--color3);
-    transition: all 0.5s;
+    left: 35%;
 }
 .section-03 .controller #next:hover{
     color: var(--color1);
@@ -708,7 +716,7 @@ WHEN INVIEW
 
 ul li{
     color: var(--color5);
-    margin: 10px 0;
+    margin: 1rem 0;
     transition: 0.5s;
 }
 
@@ -1065,6 +1073,23 @@ body{
 
 
 /*RESPONSIVE LAYOUT*/
+@media screen and (max-width: 1200px) {
+    section.section-01, section.section-02, section.section-03, section.section-04{
+        padding: 0 5%;
+    }
+}
+@media screen and (max-width: 1000px) {
+    section.section-01, section.section-02, section.section-03, section.section-04{
+        padding: 0 2%;
+    }
+}
+@media screen and (max-width: 850px) {
+    section.section-01, section.section-02, section.section-03, section.section-04{
+        padding: 0;
+    }
+}
+
+
 @media screen and (max-width: 880px) {
     .colored-box ul{
         padding: 1rem 0;
@@ -1079,9 +1104,6 @@ body{
 @media screen and (max-width: 810px) {
     .content .section-01 article{
         padding: 70px 20px 70px 20px;
-    }
-    ul li{
-        font-size: 1rem;
     }
 }
 @media screen and (max-width: 750px) {
@@ -1181,9 +1203,6 @@ body{
     .list *{
         padding: 0; margin: 0;
     }
-    ul li{
-        font-size: 16px;
-    }
     .reveal{
         position: relative;
         transform: scale(0.85);
@@ -1197,11 +1216,6 @@ body{
     }
     .content .portfolium{
         padding: 1rem .5rem;
-    }
-}
-@media screen and (max-width: 560px) {
-    ul li{
-        font-size: 16px;
     }
 }
 @media screen and (max-width: 540px) {
@@ -1219,7 +1233,13 @@ body{
     }
     .content .section-01 article p{
         text-align: justify;
-        font-size: .9rem;
+    }
+
+    .header-container .avatar-container h1{
+        font-size: 3rem;
+    }
+    .header-container .avatar-container img{
+        width: 180px;
     }
 
     .list-container{
@@ -1228,7 +1248,6 @@ body{
     }
     ul li{
         padding: 0; margin: .5rem 0;
-        font-size: 1rem;
     }
     .content .section-01 article img{
         float: left;

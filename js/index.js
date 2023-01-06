@@ -67,9 +67,9 @@ function addEvents(){
     ImgContainers.forEach(container => {
         container.addEventListener('click', (e) => {
             if(e.target.matches('.left-btn')){
-                container.children[0].scrollLeft -= 250;
+                container.children[0].scrollLeft -= 300;
             } else if(e.target.matches('.right-btn')){
-                container.children[0].scrollLeft += 250
+                container.children[0].scrollLeft += 300;
             }
         })
     })

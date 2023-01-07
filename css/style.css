@@ -75,7 +75,7 @@ a:hover{
     color: var(--color1);
 }
 
-section.section-01, section.section-02, section.section-03, section.section-04{
+section.section-01, section.section-02, section#section-03, section.section-04{
     padding: 0 10%;
 }
 
@@ -637,7 +637,7 @@ WHEN INVIEW
 
 
 /*NEXT & PREV BUTTONS*/
-html body main .section-03{
+html body main #section-03{
     padding: 50px 0;
     background-color: var(--color2);
 }
@@ -1074,17 +1074,17 @@ body{
 
 /*RESPONSIVE LAYOUT*/
 @media screen and (max-width: 1200px) {
-    section.section-01, section.section-02, section.section-03, section.section-04{
+    section.section-01, section.section-02, section#section-03, section.section-04{
         padding: 0 5%;
     }
 }
 @media screen and (max-width: 1000px) {
-    section.section-01, section.section-02, section.section-03, section.section-04{
+    section.section-01, section.section-02, section#section-03, section.section-04{
         padding: 0 2%;
     }
 }
 @media screen and (max-width: 850px) {
-    section.section-01, section.section-02, section.section-03, section.section-04{
+    section.section-01, section.section-02, section#section-03, section.section-04{
         padding: 0;
     }
 }
@@ -1124,7 +1124,13 @@ body{
     }
 
     .content .section-01 article{
-        padding: 70px 20px 70px 20px;
+        padding: 120px 20px 70px 20px;
+    }
+    .content .section-02 article#services{
+        padding: 90px 70px 70px;
+    }
+    .content .section-03#section-03 article.box{
+        padding: 120px 70px 70px;
     }
     .content .section-01 article img{
         float: left;
@@ -1223,13 +1229,22 @@ body{
         margin-top: -1rem;
         margin-bottom: .3rem;
     }
+
+    .content .section-02 article#services{
+        padding: 90px 40px 70px;
+    }
+    .content .section-03#section-03 article.box{
+        padding: 120px 40px 70px;
+    }
 }
 @media screen and (max-width: 500px) {
-    .content .section-01::before{
-        top: .1rem;
+    .content .section-01::before,
+    .content .section-02::before{
+        top: 1.5rem;
     }
-    .content .section-01::after{
-        top: .5rem;
+    .content .section-01::after,
+    .content .section-02::after{
+        top: 2rem;
     }
     .content .section-01 article p{
         text-align: justify;
@@ -1260,5 +1275,15 @@ body{
     footer .up-btn{
         top: 14rem;
         right: 1rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .content .section-03#section-03 article.box{
+        padding: 150px 30px 70px;
+    }
+
+    footer .copyright{
+        font-size: 1rem;
     }
 }

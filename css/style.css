@@ -75,8 +75,8 @@ a:hover{
     color: var(--color1);
 }
 
-section.section-01, section.section-02, section#section-03, section.section-04{
-    padding: 0 10%;
+section.section-01, section.section-02, section.section-03#section-03, section.section-04{
+    padding: 2rem 10%;
 }
 
 article h2{
@@ -1074,17 +1074,17 @@ body{
 
 /*RESPONSIVE LAYOUT*/
 @media screen and (max-width: 1200px) {
-    section.section-01, section.section-02, section#section-03, section.section-04{
+    section.section-01, section.section-02, section.section-03#section-03, section.section-04{
         padding: 0 5%;
     }
 }
 @media screen and (max-width: 1000px) {
-    section.section-01, section.section-02, section#section-03, section.section-04{
+    section.section-01, section.section-02, section.section-03#section-03, section.section-04{
         padding: 0 2%;
     }
 }
 @media screen and (max-width: 850px) {
-    section.section-01, section.section-02, section#section-03, section.section-04{
+    section.section-01, section.section-02, section.section-03#section-03, section.section-04{
         padding: 0;
     }
 }
@@ -1216,14 +1216,6 @@ body{
         transition: all 2s;
     }
 }
-@media screen and (max-width: 600px) {
-    .content .section-03 article{
-        padding: 1rem;
-    }
-    .content .portfolium{
-        padding: 1rem .5rem;
-    }
-}
 @media screen and (max-width: 540px) {
     .content .section-01 article img{
         margin-top: -1rem;
@@ -1281,6 +1273,10 @@ body{
 @media screen and (max-width: 450px) {
     .content .section-03#section-03 article.box{
         padding: 150px 30px 70px;
+    }
+
+    .avatar-container p{
+        font-size: 1rem;
     }
 
     footer .copyright{

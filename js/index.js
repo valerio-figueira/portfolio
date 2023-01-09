@@ -3,8 +3,12 @@ const URL = "https://portfolium-api.netlify.app/projects";
 
 async function fetchAPI(URL) {
     const loader = document.querySelector(".loader");
+    const prev = document.querySelector("#prev");
+    const next = document.querySelector("#next");
 
     loader.style.display = "block";
+    prev.disabled = true;
+    next.disabled = true;
 
     return fetch(URL)
     .then(response => {
@@ -13,6 +17,8 @@ async function fetchAPI(URL) {
         return response.json()
     }).then(projects => {
         loader.style.display = "none";
+        prev.disabled = false;
+        next.disabled = false;
         return projects
     })
 }

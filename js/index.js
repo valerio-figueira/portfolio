@@ -153,7 +153,7 @@ function createSocialAnchors(url, iconClass){
 
 const copyright = document.querySelector(".copyright");
 const year = new Date().getFullYear();
-copyright.innerHTML = `Direitos Autorais - \u00A9 ${year}`;
+copyright.innerHTML = `Copyright - \u00A9 ${year}`;
 
 
 

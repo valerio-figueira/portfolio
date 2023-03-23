@@ -160,7 +160,7 @@ copyright.innerHTML = `Direitos Autorais - \u00A9 ${year}`;
 let myAge = year - 1994;
 const actualMonth = new Date().getMonth() + 1;
 actualMonth < 12 ? --myAge : myAge;
-document.querySelector('.age').innerHTML = '<span>Idade:</span> ' + myAge;
+document.querySelector('.age').innerHTML = '<span>Age:</span> ' + myAge;
 
 
 // NAVBAR

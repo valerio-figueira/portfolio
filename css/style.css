@@ -55,6 +55,9 @@ body{
     overflow-x: hidden;
 }
 
+strong {
+    color: #d46c6a;
+}
 p{
     font-size: 1.3rem;
     line-height: 2rem;
@@ -273,8 +276,30 @@ article h2{
 .navbar .close-nav{
     display: none;
 }
+header a.arrow {
+    position: absolute;
+    bottom: 1rem; left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
+    cursor: pointer;
+    color: var(--color1);
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    border: 2px solid var(--color1);
+    font-size: 2rem;
+    box-shadow: 0px 0px 15px 0px #e4514f49;
+}
+header a.arrow:hover{
+    color: var(--color8);
+    border: 2px solid var(--color8);
+    box-shadow: 0px 0px 10px 0px #67e3b667;
+}
 
 .content .section-01{
     position: relative;
@@ -447,6 +472,7 @@ WHEN INVIEW
     border: 2px solid var(--color1);
     border-radius: 5px;
     transition: 0.5s;
+    box-shadow: 0px 0px 15px 0px #e4514f41;
 }
 .content .section-02 article .box:hover{
     border: 2px solid #ae2725;
@@ -718,6 +744,7 @@ html body main #section-03{
     flex-direction: row;
     justify-content: space-around;
     padding: .5rem; margin: 0;
+    box-shadow: 0px 0px 15px 0px #e4514f41;
 }
 .list-container #list-1, .list-container #list-2{
     padding: 0 .5rem;
@@ -898,6 +925,7 @@ footer .up-btn:hover{
     }
     to{        
         border: 2px solid #56bd97;
+        box-shadow: 0px 0px 10px 0px #56bd97;
     }
 }
 

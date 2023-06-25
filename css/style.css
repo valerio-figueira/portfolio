@@ -1332,3 +1332,9 @@ body{
         font-size: 1rem;
     }
 }
+
+@media screen and (max-height: 698px) {
+    header a.arrow {
+        display: none;
+    }
+}

@@ -1,6 +1,6 @@
 import Projects from './Projects.js';
 import Technologies from './Technologies.js';
-//const URL = "https://portfolium-api.netlify.app/projects";
+const URL = "https://portfolium-api.netlify.app/projects";
 
 
 

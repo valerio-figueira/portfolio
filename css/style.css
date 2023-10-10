@@ -53,8 +53,8 @@ body{
     background-color: #1c1c1c;
     color: white;
 
-    min-width: var(--mobile);
-    max-width: 100vw;
+    min-inline-size: var(--mobile);
+    max-inline-size: 100vw;
     margin: auto;
     overflow-x: hidden;
 }
@@ -88,6 +88,19 @@ article h2{
     font-size: 2.5rem;
 }
 
+header {
+    min-block-size: 650px;
+}
+
+@media screen and (max-height: 800px) {
+    header.header-container .avatar-container {
+        padding: 2rem 0;
+    }
+    header.header-container .photo-wrapper .photo-box {
+        block-size: 12rem;
+        inline-size: 12rem;
+    }
+}
 
 
 .abilities{
@@ -240,6 +253,13 @@ article h2{
 .header-container .avatar-container h1::before{
     content: "</";
     color: var(--color10);
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    transition: 0.5s linear;
 }
 .header-container .avatar-container h1{
     margin-top: 1.5rem;
@@ -395,7 +415,8 @@ header a.arrow:hover{
     font-size: 2rem;
 }
 .content .section-01 article p{
-    margin: 2rem 0;
+    margin: 1.4rem 0;
+    padding: 0;
     color: var(--color5);
 }
 .content .section-01 article .destaque{
@@ -691,8 +712,8 @@ html body main #section-03{
 ul.list{
     display: flex;
     flex-direction: column;
-    gap: 2rem;
-    padding: 4rem 2rem;
+    gap: 1.4rem;
+    padding: 0 2rem;
     block-size: 100%;
     list-style: none;
 }
@@ -834,7 +855,7 @@ footer .up-btn:hover{
 
 @keyframes fadeOut{
     from {
-        opacity: 1;
+        opacity: .5;
     }
     to{
         opacity: 0.1;

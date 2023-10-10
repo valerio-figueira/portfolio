@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./imgs/icon.png" type="image/x-icon">
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="./js/index.js" defer type="module"></script>
 </head>
 <body class="grid">
@@ -28,7 +29,7 @@
             <button class="fa fa-bars mobile-icon"></button>
         </nav>
 
-        <section class="box avatar-container">
+        <section class="avatar-container">
             <div class="photo-wrapper">
                 <div class="photo-box">
                     <img src="imgs/photo.webp" alt="avatar">
@@ -48,11 +49,11 @@
                         <img src="imgs/photo.webp" alt="avatar">
                     </div>
                 </div>
-                <div class="about-box">
+                <div class="about-box box">
                     <h2><span class="moving-border view-word">About me</span></h2>
                     <p>Salute, stranger! I am a dedicated and enthusiastic web development student and developer. With a solid understanding of <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>, I strive to deliver creative and effective solutions to meet the needs of clients and users.</p>
                 </div>
-                <div class="about-box">
+                <div class="about-box box">
                     <ul class="list">
                         <li><span>Name:</span> Valerio Figueira</li>
                         <li><span>Phone:</span> <a href="tel:+55(34)99971.3607">+55 34 99971-3607</a></li>
@@ -114,5 +115,14 @@
         <p class="copyright"></p>
         <button class="fa fa-angle-up up-btn"></button>
     </footer>
+
+    <script>
+        ScrollReveal().reveal('h1', { reset: true, delay: 100 })
+        ScrollReveal().reveal('h2', { reset: true, delay: 100 })
+        ScrollReveal().reveal('h3', { reset: true, delay: 100 })
+        ScrollReveal().reveal('p', { reset: true, delay: 200 })
+        ScrollReveal().reveal('.box', { reset: true, delay: 200 })
+        ScrollReveal().reveal('li', { reset: true, delay: 200 })
+    </script>
 </body>
 </html>

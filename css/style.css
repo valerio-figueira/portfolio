@@ -816,8 +816,8 @@ footer .up-btn:hover{
 .reveal{
     position: relative;
     transform: scale(0.9);
-    opacity: 0;
-    transition: all 2s;
+    opacity: .7;
+    transition: 1s;
 }
 .reveal.inview{
     transform: scale(1);
@@ -1327,6 +1327,32 @@ body{
     }
     .header-container .avatar-container p { font-size: 1.4rem; }
     .content .section-02 h2{ font-size: 2.5rem; }
+
+    /*SECTION 01*/
+    .content .section-01 article#about {
+        grid-template-columns: 1fr;
+        row-gap: 2.5rem;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 7rem 3.5rem;
+        overflow: hidden;
+    }
+    #about .about-box {
+        min-block-size: 260px;
+        max-inline-size: 380px;
+    }
+    .about-photo-box {
+        margin: 0;
+        min-block-size: 260px;
+        inline-size: 100%;
+    }
+    .content #about .about-photo-box img {
+        margin: 0;
+        block-size: 400px;
+        inline-size: 100%;
+        object-fit: cover;
+    }
 
     /*SECTION 02*/
     .content .section-02#services{

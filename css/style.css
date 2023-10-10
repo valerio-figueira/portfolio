@@ -300,8 +300,8 @@ header a.arrow {
 }
 header a.arrow:hover{
     color: var(--color8);
-    border: 2px solid var(--color8);
-    box-shadow: 0px 0px 10px 0px #67e3b667;
+    border: 2px solid var(--color10);
+    box-shadow: 0px 0px 10px 0px #00ffd567;
 }
 
 .content .section-01{
@@ -929,7 +929,7 @@ footer .up-btn:hover{
     width: 70px;
     height: 70px;
     border-radius: 50%;
-    border-bottom: 5px solid #67e3b6;
+    border-bottom: 5px solid var(--color10);
 }
 
 body{

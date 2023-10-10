@@ -5,6 +5,7 @@ const URL = "https://portfolium-api.netlify.app/projects";
 
 
 // FADE IN ANIMATION ON SCROLL
+
 const reveal = document.querySelectorAll('.reveal');
 const callback = function (entries) {
     entries.forEach(entry => {

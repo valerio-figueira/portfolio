@@ -2,12 +2,43 @@ import Projects from './Projects.js';
 import Technologies from './Technologies.js';
 const URL = "https://portfolium-api.netlify.app/projects";
 
+const myName = 'Valerio'
+const tagOfMyName = document.querySelector('h1')
+tagOfMyName.innerHTML = ''
+const arrOfMyName = myName.split('')
+let index = 0
 
+const simulateTyping = () => {
+    if(index < myName.length) {
+        tagOfMyName.innerHTML += arrOfMyName[index]
+        index++
+        setTimeout(simulateTyping, 200)
+    } else {
+        --index
+        setTimeout(simulateTypingBackspace, 4000)
+    }
+}
+
+const simulateTypingBackspace = () => {
+    if(index < 0) {
+        arrOfMyName.push(...myName.split(''))
+        index = 0
+        simulateTyping()
+        return
+    }
+    if(index <= myName.length) {
+        arrOfMyName.pop()
+        tagOfMyName.innerHTML = arrOfMyName.join('')
+        index--
+        setTimeout(simulateTypingBackspace, 100)
+    }
+}
+
+simulateTyping()
 
 // FADE IN ANIMATION ON SCROLL
-
 const reveal = document.querySelectorAll('.reveal');
-const callback = function (entries) {
+const callback = (entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('inview');

@@ -42,29 +42,27 @@
     </header>
 
     <main class="content">
-        <section class="section-01 reveal">
-            <article id="about">
-                <div class="about-photo-wrapper about-box">
-                    <div class="about-photo-box">
-                        <img src="imgs/photo.webp" alt="avatar">
-                    </div>
+        <section class="section-01 reveal" id="about">
+            <article class="about-photo-wrapper about-box">
+                <div class="about-photo-box">
+                    <img src="imgs/photo.webp" alt="avatar">
                 </div>
-                <div class="about-box box">
-                    <h2><span class="moving-border view-word">Sobre</span></h2>
-                    <p>Olá! Sou engenheiro de software full-stack. Desenvolvo aplicações para web. Tenho fluência na linguagem de programação <strong>JavaScript</strong> e programação de servidores no ambiente de desenvolvimento chamado <strong>Node.js</strong>. Tenho experiência em banco de dados relacionais e não relacionais, ORMs, Docker contêineres, AWS e também outras habilidades mais direcionadas ao cliente: <strong>React.js</strong>, <strong>HTML</strong> e <strong>CSS</strong>.</p>
-                </div>
-                <div class="about-box box">
-                    <ul class="list">
-                        <p>Sinta-se à vontade para falar comigo e tirar suas dúvidas:</p>
-                        <li><span>Name:</span> Valerio Figueira</li>
-                        <li><span>Phone:</span> <a href="tel:+55(34)99971.3607">+55 34 99971-3607</a></li>
-                        <li><span>E-mail:</span> <a href="mailto:j.valerio.figueira@gmail.com">j.valerio.figueira@gmail.com</a></li>
-                        <li><span>Experience:</span> Freelancer</li>
-                        <li class="age"></li>
-                        <li><span>Address:</span> Brazil, MG</li>
-                        <li><span>Freelance:</span> Available</li>
-                    </ul>
-                </div>
+            </article>
+            <article class="about-box box">
+                <h2><span class="moving-border view-word">Sobre</span></h2>
+                <p>Olá! Sou engenheiro de software full-stack. Desenvolvo aplicações para web. Tenho fluência na linguagem de programação <strong>JavaScript</strong> e programação de servidores no ambiente de desenvolvimento chamado <strong>Node.js</strong>. Tenho experiência em banco de dados relacionais e não relacionais, ORMs, Docker contêineres, AWS e também outras habilidades mais direcionadas ao cliente: <strong>React.js</strong>, <strong>HTML</strong> e <strong>CSS</strong>.</p>
+            </article>
+            <article class="about-box box">
+                <ul class="list">
+                    <p>Sinta-se à vontade para falar comigo e tirar suas dúvidas:</p>
+                    <li><span>Name:</span> Valerio Figueira</li>
+                    <li><span>Phone:</span> <a href="tel:+55(34)99971.3607">+55 34 99971-3607</a></li>
+                    <li><span>E-mail:</span> <a href="mailto:j.valerio.figueira@gmail.com">j.valerio.figueira@gmail.com</a></li>
+                    <li><span>Experience:</span> Freelancer</li>
+                    <li class="age"></li>
+                    <li><span>Address:</span> Brazil, MG</li>
+                    <li><span>Freelance:</span> Available</li>
+                </ul>
             </article>
         </section>
         <section class="section-02 reveal" id="services">
@@ -123,7 +121,7 @@
         ScrollReveal().reveal('h1', { reset: true, delay: 100 })
         ScrollReveal().reveal('h2', { reset: true, delay: 100 })
         ScrollReveal().reveal('h3', { reset: true, delay: 100 })
-        ScrollReveal().reveal('p', { reset: true, delay: 200 })
+        ScrollReveal().reveal('article p', { reset: true, delay: 200 })
         ScrollReveal().reveal('.box', { reset: true, delay: 200 })
         ScrollReveal().reveal('li', { reset: true, delay: 200 })
     </script>

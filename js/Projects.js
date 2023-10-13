@@ -5,6 +5,7 @@ export default class Projects {
         this.currentPage = 0
         this.totalProjects = 0
         this.totalPages = 0
+        this.buttons = []
 
         this.portfolium = document.querySelector(".portfolium")
         this.loader = document.querySelector(".loader")
@@ -62,6 +63,7 @@ export default class Projects {
 
         this.addButtonEvents()
         this.toggleButtons()
+        this.createPaginationElements()
     }
 
     addAttributes(data) {
@@ -81,7 +83,7 @@ export default class Projects {
     }
 
     async prevPage() {
-        if(this.currentPage <= this.totalPages) {
+        if (this.currentPage <= this.totalPages) {
             this.displayProjects(`?page=${this.currentPage + 1}`)
         }
     }
@@ -124,5 +126,38 @@ export default class Projects {
         this.loader.style.display = "none"
         this.prevButton.disabled = false
         this.nextButton.disabled = false
+    }
+
+    createPaginationElements() {
+        const container = document.querySelector('.pagination-numbers')
+        if(!container) {
+            this.createPageNumbers()
+        } else {
+            this.buttons.forEach(btn => {
+                btn.disabled = false
+                if(btn.id == this.currentPage) btn.disabled = true
+            })
+        }
+    }
+
+    addEventToNumber(btn) {
+        return btn.addEventListener('click', (e) => {
+            this.displayProjects(`?page=${e.target.id}`)
+        })
+    }
+
+    createPageNumbers() {
+        const container = document.createElement('div')
+        for (let i = 1; i <= this.totalPages; i++) {
+            let btn = document.createElement('button')
+            btn.innerHTML = i
+            btn.id = i
+            if(i === this.currentPage) btn.disabled = true
+            this.addEventToNumber(btn)
+            this.buttons.push(btn)
+            container.appendChild(btn)
+        }
+        container.className = 'pagination-numbers'
+        this.nextButton.nextSibling.after(container)
     }
 }

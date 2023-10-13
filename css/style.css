@@ -675,10 +675,14 @@ html body main #section-03{
     padding: 50px 0;
     background-color: var(--color2);
 }
-.section-03 .controller #prev, .section-03 .controller #next{
-    display: inline;
-    position: absolute;
-    bottom: 30px;
+.section-03 .controller {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+.section-03 .controller button{
     font-size: 1.7rem;
     cursor: pointer;
     border: none;
@@ -686,25 +690,18 @@ html body main #section-03{
     color: var(--color3);
     transition: all 0.5s;
 }
-.section-03 .controller #prev:hover{
+.section-03 .controller button:hover{
     color: var(--color1);
 }
-.section-03 .controller #prev{
-    right: 35%;
-}
-.section-03 .controller #next{
-    left: 35%;
-}
-.section-03 .controller #next:hover{
-    color: var(--color1);
-}
-.section-03 .controller #prev[disabled]{
+.section-03 .controller button[disabled]{
     color: #696969;
     cursor: default;
 }
-.section-03 .controller #next[disabled]{
-    color: #696969;
-    cursor: default;
+.section-03 .controller .pagination-numbers {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 ul.list{
     display: flex;

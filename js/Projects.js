@@ -3,9 +3,11 @@ export default class Projects {
     constructor(URL) {
         this.URL = URL
         this.currentPage = 0
-        this.projectsPerPage = 8
+        this.totalProjects = 0
+        this.totalPages = 0
 
         this.portfolium = document.querySelector(".portfolium")
+        this.loader = document.querySelector(".loader")
         this.nextButton = document.getElementById("next")
         this.prevButton = document.getElementById("prev")
 
@@ -14,34 +16,27 @@ export default class Projects {
     }
 
     async fetchAPI(URL) {
-        const loader = document.querySelector(".loader")
-        const prev = document.querySelector("#prev")
-        const next = document.querySelector("#next")
-
-        loader.style.display = "block"
-        prev.disabled = true
-        next.disabled = true
+        this.disableBtns()
 
         return fetch(URL)
             .then(response => {
                 return Promise.resolve(response);
             }).then(response => {
                 return response.json()
-            }).then(projects => {
-                loader.style.display = "none"
-                prev.disabled = false
-                next.disabled = false
-                return projects
-            })
+            }).then(data => {
+                this.enableBtns()
+                return data
+            }).catch(error => console.error(error))
     }
 
-    async displayProjects() {
-        const projects = await this.fetchAPI(this.URL)
-        const startIndex = this.currentPage * this.projectsPerPage;
-        const endIndex = startIndex + this.projectsPerPage;
-        const currentPageProjects = projects.slice(startIndex, endIndex);
+    async displayProjects(query = undefined) {
+        let url = this.URL
+        if (query) url = url + query
 
-        const html = currentPageProjects.map(project => {
+        const data = await this.fetchAPI(url)
+        this.addAttributes(data)
+
+        const html = data.projects.map(project => {
             return `
             <article class="projects" id="${project._id}">
                 <div class="image-gallery">
@@ -66,36 +61,39 @@ export default class Projects {
         this.portfolium.innerHTML = html
 
         this.addButtonEvents()
-        this.toggleButtons(projects)
+        this.toggleButtons()
+    }
+
+    addAttributes(data) {
+        if (data) {
+            this.totalProjects = data.totalProjects
+            this.currentPage = data.currentPage
+            this.totalPages = data.totalPages
+            return true
+        }
+        return false
     }
 
     nextPage() {
         if (this.currentPage > 0) {
-            this.currentPage--;
-            this.displayProjects();
+            this.displayProjects(`?page=${this.currentPage - 1}`)
         }
     }
 
     async prevPage() {
-        const projects = await this.fetchAPI(this.URL);
-        const maxPages = Math.ceil(projects.length / this.projectsPerPage);
-
-        if (this.currentPage < maxPages - 1) {
-            this.currentPage++;
-            this.displayProjects();
+        if(this.currentPage <= this.totalPages) {
+            this.displayProjects(`?page=${this.currentPage + 1}`)
         }
     }
 
-    toggleButtons(projects) {
-        const maxPages = Math.ceil(projects.length / this.projectsPerPage);
-
-        if (this.currentPage === maxPages - 1) {
+    toggleButtons() {
+        if (this.currentPage === this.totalPages) {
             this.prevButton.disabled = true;
         } else {
             this.prevButton.disabled = false;
         }
 
-        if (this.currentPage === 0) {
+        if (this.currentPage === 1) {
             this.nextButton.disabled = true;
         } else {
             this.nextButton.disabled = false;
@@ -114,5 +112,17 @@ export default class Projects {
                 }
             })
         })
+    }
+
+    disableBtns() {
+        this.loader.style.display = "block"
+        this.prevButton.disabled = true
+        this.nextButton.disabled = true
+    }
+
+    enableBtns() {
+        this.loader.style.display = "none"
+        this.prevButton.disabled = false
+        this.nextButton.disabled = false
     }
 }

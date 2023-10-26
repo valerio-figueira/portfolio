@@ -344,13 +344,7 @@ header a.arrow:hover{
     border: 1px solid var(--color12);
 }
 .about-box:hover {
-    animation-name: twink;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-    transition: 0.5s linear;
+    border: 1px solid var(--color1);
 }
 .about-box:nth-child(2) {
     padding: 2rem;
